@@ -2,6 +2,11 @@ Require Import Coq.Reals.Reals.
 Require Import Coq.Vectors.Vector.
 Import VectorNotations.
 
+
+Require Import Coq.Reals.Rdefinitions.
+Require Import Coq.Reals.RIneq.
+
+
 Definition vector := Vector.t. 
 
 Record TriDiagSys (n : nat) := {
@@ -223,8 +228,49 @@ Definition solution {n : nat} (SLE : TriDiagSys n) : vector R (S n) :=
   end SLE.
 
 
-Theorem correct :
-  forall (n : nat) (SLE : TriDiagSys n),
-    matrix_mul SLE (solution SLE) = f _ SLE.
-Proof.
-Admitted.
+
+
+Fixpoint find_denominator' (n : nat) (b : vector R (S n)) (a c : vector R n) (alpha : R) : vector R n :=
+  match n return vector R (S n) -> vector R n -> vector R n -> vector R n with
+  | O => fun _ _ _ => []
+  | S k => fun b a c =>
+    let b_1 := hd b in
+    let tlb := tl b in
+    let a_1 := hd a in
+    let tla := tl a in
+    let c_1 := hd c in
+    let tlc := tl c in
+    let denominator := denominator a_1 alpha b_1 in
+    let alpha_i := alpha_i c_1 a_1 alpha b_1 in
+    denominator :: (find_denominator' k tlb tla tlc alpha_i) 
+  end b a c. 
+
+
+Definition find_denominator {n : nat} (SLE : TriDiagSys n) : vector R (S n) :=
+  match n return TriDiagSys n -> vector R (S n) with
+  | O => fun _ => 
+    let b_1 := hd (b _ SLE) in
+    [b_1]
+  | S k => fun SLE =>
+    let c_1 := hd (c _ SLE) in
+    let b_1 := hd (b _ SLE) in
+    let denominator :=  b_1 in
+    let alpha_1 := alpha_1 c_1 b_1 in
+    denominator :: (find_denominator' (S k) (b _ SLE) (c _ SLE) (a _ SLE) alpha_1) 
+    end SLE.
+
+
+
+Fixpoint check_nonzero {n : nat} (v : vector R n) : bool :=
+  match v with
+  | [] => true (* Опять относительно несущественный лишний случай *)
+  | h :: t => if Req_EM_T h 0%R then false else check_nonzero t 
+  end.
+
+
+
+Definition is_consistent {n : nat} (SLE : TriDiagSys n) : Prop :=
+  check_nonzero (find_denominator SLE) = true. 
+
+
+
