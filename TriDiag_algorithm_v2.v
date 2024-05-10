@@ -1,22 +1,21 @@
 Require Import Coq.Reals.Reals.
-Require Import Coq.Vectors.Vector.
-Require Import Coq.Vectors.VectorSpec.
-Import VectorNotations.
-
-
 Require Import Coq.Reals.Rdefinitions.
 Require Import Coq.Reals.RIneq.
 
+Require Import Coq.Vectors.Vector.
+Require Import Coq.Vectors.VectorSpec.
+
+Import VectorNotations.
 Open Scope R_scope.
 
 Definition vector := Vector.t R.
+
 
 Fixpoint mkVector (n : nat) (value : R) : Vector.t R n :=
 match n with
 | O => Vector.nil R
 | S p => value :: (mkVector p value)
 end.
-
 
 
 Record TriDiagSys (n : nat) := {
@@ -52,8 +51,6 @@ Definition mkL {n : nat} (l : vector (S n)) :=
   Build_L_matrix _ l (mkVector n 1). (* Не знаю как, но работает*)
 
 
-
-
 Record U_matrix (n : nat) := {
   v : vector (S n); (* v[n] = 1, для задания определенного разложения *)
   u : vector n;
@@ -75,9 +72,7 @@ Definition l1_find (a1 v1 : R) : R :=
 a1/v1.
 
 Definition li_find (ai ui_ vi : R) : R :=
-(ai - ui_) / vi. (* подходит и для вычисления последнего элемента, т.к. vi = 1 *)
-
-
+(ai - ui_) / vi.
 
 
 Fixpoint v_find {n : nat} (d : vector n) : vector (S n) :=
@@ -90,18 +85,13 @@ Fixpoint v_find {n : nat} (d : vector n) : vector (S n) :=
   end d.
 
 
-
-
 Record lu_vectors (n : nat) := { (* вспомогательный тип, для вычисления разложения, через рекурсию *)
   l' : vector (S n);
   u' : vector n;
 }.
 
 Definition mkLU {n : nat} (l : vector (S n)) (u : vector n) :=
-  Build_lu_vectors _ l u. (* Не знаю как, но работает*)
-
-
-
+  Build_lu_vectors _ l u.
 
 
 Fixpoint find_LU' {n : nat} (a v : vector (S n)) (c : vector n) (ui_: R) : lu_vectors n:=
@@ -109,7 +99,6 @@ Fixpoint find_LU' {n : nat} (a v : vector (S n)) (c : vector n) (ui_: R) : lu_ve
   | 0 => fun  a v c =>
     let an := hd a in
     let ln := li_find an ui_ (hd v) in
-    (* let ln := li_find an ui_ 1 in *) (* эквивалентный способ вычисления *)
     mkLU [ln] []
   | S k =>  fun a v c =>
     let ai := hd a in
@@ -219,6 +208,7 @@ Fixpoint LU_mul' {n : nat} (v l : vector (S  n))(u : vector n) (vi_ ui_ : R) : A
     mkA' d c a 
   end v l u.
 
+
 Definition LU_mul {n : nat} (L : L_matrix n) (U : U_matrix n) : A_matrix n :=
   let l := l _ L in
   let v := v _ U in
@@ -253,7 +243,7 @@ Definition LU_mul {n : nat} (L : L_matrix n) (U : U_matrix n) : A_matrix n :=
   end l v u.
 
 
-
+(* Условия совместности *)
 
 Fixpoint check_nonzero {n : nat} (v : vector n) : bool :=
   match v with
@@ -262,21 +252,28 @@ Fixpoint check_nonzero {n : nat} (v : vector n) : bool :=
   end.
 
 
+Definition magicL {n : nat} (L : L_matrix n) : Prop :=
+  let l := l _ L in
+  let l_not_zero := check_nonzero l in
+  (l_not_zero = true).
+
+
+Definition magicU {n : nat} (U : U_matrix n) : Prop :=
+  let u := u _ U in
+  let u_not_zero := check_nonzero u in
+  (u_not_zero = true).
+
+
 Definition is_consistent {n : nat} (SLE : TriDiagSys n) : Prop :=
   let L := make_L SLE in
   let U := make_U SLE in
-  let l := l _ L in
-  let v := v _ U in
-  
-  let v_not_zero := check_nonzero v in
-  let l_not_zero := check_nonzero l in
-  (l_not_zero = true) /\ (v_not_zero = true).
+  magicL L /\ magicU U.
 
 
 
 
 
-
+(* Вспомогательные леммы*)
 
 Lemma no_brackets : forall (r1 r2 r3 : R),
   (r1 * r2 * / r3)%R = (r1 * (r2 * / r3))%R.
@@ -308,6 +305,7 @@ intros.
 Admitted.
 
 
+(* Корректность построенного разложения*)
 
 Lemma LU_Decomposition:
   forall {n : nat} (SLE : TriDiagSys n), is_consistent SLE -> LU_mul (make_L SLE) (make_U SLE) = mkA SLE.
@@ -325,24 +323,15 @@ induction n.
     rewrite v0_eq_nil with d.
     rewrite v0_eq_nil with c.
     reflexivity.
-
-  + unfold LU_mul, make_L, make_U, mkA.
-    unfold mkA', find_LU, mkL, mkU, v_find.
-
-    unfold LU_mul, make_L, make_U, mkA in IHn.
-    unfold mkA', find_LU, mkL, mkU, v_find in IHn.
-    simpl.
-    simpl in IHn.
+  + 
     
-    
-
 Admitted.
 
 
 
-
-
 (* PART2 Решение системы Ly = b *)
+
+(* Поиск вектора-решений y *)
 
 Definition y1_find (b1 l1 : R) : R :=
   b1/l1.
@@ -366,11 +355,8 @@ Fixpoint find_y' {n : nat} (b l : vector n) (yi_ : R) : vector n :=
   end b l.
 
 
-Definition find_y {n : nat} (SLE : TriDiagSys n) : vector (S n) :=
-
-  let L := make_L SLE in
+Definition find_y {n : nat} (L : L_matrix n) (b : vector (S n)) : vector (S n) :=
   let l := l _ L in
-  let b := b _ SLE in
 
   let b1 := hd b in
   let l1 := hd l in
@@ -382,7 +368,7 @@ Definition find_y {n : nat} (SLE : TriDiagSys n) : vector (S n) :=
   y1 :: (find_y' tlb tll y1).
 
 
-(* Произведение Ly *)
+(* Умножение матриц Ly *)
 
 Fixpoint L_mul' {n : nat} (l y : vector n) (yi_ : R) : vector n :=
   match n return vector n -> vector n -> vector n with 
@@ -412,45 +398,37 @@ Definition L_mul {n : nat} (L : L_matrix n) (y : vector (S n)) : vector (S n) :=
 
 
 
-
-
-
-
+(* Корректность найденного решения системы Ly = b *)
 
 Lemma L_solution:
-  forall {n : nat} (SLE : TriDiagSys n), is_consistent SLE -> L_mul (make_L SLE) (find_y SLE) = b _ SLE.
+  forall {n : nat} (L : L_matrix n) (b : vector (S n)), magicL L -> L_mul (L) (find_y L b) = b.
 Proof.
 intros.
 induction n.
   - unfold L_mul, make_L, find_y.
     simpl.
     unfold y1_find.
-    destruct SLE as [d a c b].
+    destruct L as [l].
     simpl.
     unfold Rdiv.
-    rewrite <- no_brackets with (r1 := hd a) (r2 := hd b) (r3 := hd a).
+    rewrite <- no_brackets with (r1 := hd l) (r2 := hd b0) (r3 := hd l).
     
-    rewrite Rinv_r_simpl_m with (r1 := hd a) (r2 := hd b).
+    rewrite Rinv_r_simpl_m with (r1 := hd l) (r2 := hd b0).
     +
       apply hd_eq_one_v.
     +
       intros H1.
-      unfold is_consistent in H.
+      unfold magicL in H.
       unfold check_nonzero in H.
       simpl in H.
-      rewrite H1 in H.
       
-
       admit.
-
   - unfold L_mul, make_L, find_y.
     simpl.
     unfold y1_find.
-    destruct SLE as [d a c b].
     simpl.
 
     admit.
-
 Admitted.
 
 
@@ -458,6 +436,7 @@ Admitted.
 
 (* PART3 Решение системы Ux = y *)
 
+(* поиск вектора-решения x *)
 Definition xn_find (yn vn : R) : R :=
   yn / vn.
 
@@ -482,12 +461,9 @@ Fixpoint find_x' {n : nat} (y u v : vector n) (xi_ : R) : vector n :=
   end y u v.
 
 
-Definition find_x {n : nat} (SLE : TriDiagSys n) : vector (S n) :=
-
-  let U := make_U SLE in
+Definition find_x {n : nat} (U : U_matrix n) (y : vector (S n)) : vector (S n) :=
   let u := rev (u _ U) in
   let v := rev (v _ U) in
-  let y := rev (find_y SLE) in
 
   let vn := hd v in
   let yn := hd y in
@@ -498,6 +474,8 @@ Definition find_x {n : nat} (SLE : TriDiagSys n) : vector (S n) :=
 
   rev (xn :: (find_x' inity u initv xn)).
 
+
+(* умножение матриц Ux *)
 
 Fixpoint U_mul' {n : nat} (x v u : vector n) (xi_ : R) : vector n :=
   match n return vector n -> vector n -> vector n -> vector n with
@@ -515,9 +493,7 @@ Fixpoint U_mul' {n : nat} (x v u : vector n) (xi_ : R) : vector n :=
   end x u v.
 
 
-(* TODO Произведение Ux*)
 Definition U_mul {n : nat} (U : U_matrix n) (x : vector (S n)) : vector (S n) :=
-
   let u := rev (u _ U) in
   let v := rev (v _ U) in
   let x := rev x in
@@ -533,8 +509,9 @@ Definition U_mul {n : nat} (U : U_matrix n) (x : vector (S n)) : vector (S n) :=
 
 
 
+(* Корректность найденного решения системы Ux = y *)
 Lemma U_solution:
-  forall {n : nat} (SLE : TriDiagSys n), is_consistent SLE -> U_mul (make_U SLE) (find_x SLE) = (find_y SLE).
+  forall {n : nat} (U : U_matrix n) (y : vector (S n)), magicU U -> U_mul U (find_x U y) = y.
 Proof.
 intros.
 induction n.
@@ -542,26 +519,19 @@ induction n.
     unfold U_mul, find_y.
     unfold U_mul', make_U, find_x, find_y'.
     simpl.
-    destruct SLE as [d a c b].
+    destruct U as [v u].
     unfold find_y, y1_find, xn_find.
     simpl.
     rewrite rev_rev.  
     rewrite rev_one.
-    rewrite rev_one.
-    simpl.
-    rewrite rev_one.
     simpl.
     rewrite Rmult_comm.
-    rewrite Rmult_1_r.
-    unfold Rdiv.
-    rewrite Rinv_1.
-    rewrite Rmult_1_r.
-    reflexivity.
+    
+    admit.
   + 
     unfold U_mul, find_y.
     unfold U_mul', make_U, find_x, find_y'.
     simpl.
-    destruct SLE as [d a c b].
     unfold find_y, y1_find, xn_find.
     simpl.
     rewrite rev_rev.  
@@ -570,8 +540,10 @@ Admitted.
 
 
 
+
 (* PART4 Доказательство корректности алгоритма *)
 
+(* Умножение матриц Ax *)
 Fixpoint matrix_mul' (n : nat) (d a x : vector (S n)) (c : vector n) (xi : R) : vector (S n) :=
   match n return vector (S n) -> vector (S n) -> vector (S n) -> vector n -> vector (S n) with
   | 0 => fun d a x c =>
@@ -619,48 +591,43 @@ Definition matrix_mul {n : nat} (SLE : A_matrix n) (x : vector (S n)) : vector (
 
 
 
-Lemma LUx_assoc : forall {n : nat} (SLE : TriDiagSys n) (x : vector (S n)),
-      matrix_mul (LU_mul (make_L SLE) (make_U SLE)) (find_x SLE) = L_mul (make_L SLE) (U_mul (make_U SLE) (find_x SLE)).
+
+(* Ассоциативность умножения матриц *)
+
+Lemma LUx_assoc : forall {n : nat} (L : L_matrix n) (U : U_matrix n) (x : vector (S n)),
+      matrix_mul (LU_mul L U) (x) = L_mul (L) (U_mul (U) (x)).
 Proof.
 intros.
 induction n.
   + 
     unfold matrix_mul, L_mul, U_mul.
     simpl.
-    destruct SLE as [d a c b].
-    simpl.
-
-    
-    rewrite rev_one.
-    rewrite rev_one.
-    simpl.
-    rewrite Rmult_comm.
-    rewrite Rmult_1_r.
-    unfold find_x.
-    simpl.
-    unfold xn_find, find_y.
-    simpl.
-    unfold y1_find.
+    destruct L as [l].
+    destruct U as [v u].
     simpl.
     rewrite rev_one.
+    simpl.
+    simpl.
+    rewrite <- hd_eq_one_v with (x).
     rewrite rev_one.
+    simpl.
+    rewrite <- hd_eq_one_v with (v).
     rewrite rev_one.
-    rewrite rev_one.
-    rewrite Rmult_1_l.
-    rewrite Rmult_comm.
+    simpl.
+    rewrite <- Rmult_assoc.
     reflexivity.
-
   +
-
-
+    
   admit.
 Admitted.
 
 
 
 
+(* Теоерма о корректности найденного решения *)
+
 Theorem correct:
-  forall {n : nat} (SLE : TriDiagSys n), is_consistent SLE -> matrix_mul (mkA SLE) (find_x SLE) = b _ SLE.
+  forall {n : nat} (SLE : TriDiagSys n), is_consistent SLE -> matrix_mul (mkA SLE) (find_x (make_U SLE) (find_y (make_L SLE) (b _ SLE))) = b _ SLE.
 Proof.
 intros.
 rewrite <- LU_Decomposition.  
@@ -671,14 +638,10 @@ rewrite <- LU_Decomposition.
     rewrite L_solution.
       +++
       reflexivity.
-
       +++
       apply H.
     ++
     apply H.
-    ++
-    (* Что-то очень странное... *)
-    admit.
   +
   apply H.
-Admitted.
+Qed.
