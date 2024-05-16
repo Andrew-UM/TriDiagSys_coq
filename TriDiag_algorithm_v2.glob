@@ -1,0 +1,862 @@
+DIGEST 14cd359fc80a4fc123a2cf7d324aa724
+FTriDiag_algorithm_v2
+R15:29 Coq.Reals.Reals <> <> lib
+R47:68 Coq.Reals.Rdefinitions <> <> lib
+R86:100 Coq.Reals.RIneq <> <> lib
+R119:136 Coq.Vectors.Vector <> <> lib
+R154:175 Coq.Vectors.VectorSpec <> <> lib
+R186:200 Coq.Vectors.Vector VectorNotations <> mod
+def 235:240 <> vector
+R245:252 Coq.Vectors.Vector <> t ind
+R254:254 Coq.Reals.Rdefinitions RbaseSymbolsImpl R defax
+def 268:275 <> mkVector
+R282:284 Coq.Init.Datatypes <> nat ind
+binder 278:278 <> n:1
+R296:296 Coq.Reals.Rdefinitions RbaseSymbolsImpl R defax
+binder 288:292 <> value:2
+R301:308 Coq.Vectors.Vector <> t ind
+R310:310 Coq.Reals.Rdefinitions RbaseSymbolsImpl R defax
+R312:312 TriDiag_algorithm_v2 <> n:1 var
+R323:323 TriDiag_algorithm_v2 <> n:1 var
+R332:332 Coq.Init.Datatypes <> O constr
+R337:346 Coq.Vectors.Vector <> nil constr
+R348:348 Coq.Reals.Rdefinitions RbaseSymbolsImpl R defax
+R352:352 Coq.Init.Datatypes <> S constr
+R364:368 Coq.Vectors.VectorDef VectorNotations ::vector_scope:x_'::'_x not
+R385:385 Coq.Vectors.VectorDef VectorNotations ::vector_scope:x_'::'_x not
+R359:363 TriDiag_algorithm_v2 <> value:2 var
+R369:376 TriDiag_algorithm_v2 <> mkVector:3 def
+R380:384 TriDiag_algorithm_v2 <> value:2 var
+rec 401:410 <> TriDiagSys
+proj 429:429 <> d
+proj 445:445 <> a
+proj 465:465 <> c
+proj 481:481 <> b
+R417:419 Coq.Init.Datatypes <> nat ind
+binder 413:413 <> n:5
+R433:438 TriDiag_algorithm_v2 <> vector def
+R440:440 TriDiag_algorithm_v2 <> n:5 var
+R449:454 TriDiag_algorithm_v2 <> vector def
+R457:457 Coq.Init.Datatypes <> S constr
+R459:459 TriDiag_algorithm_v2 <> n:5 var
+R469:474 TriDiag_algorithm_v2 <> vector def
+R476:476 TriDiag_algorithm_v2 <> n:5 var
+R485:490 TriDiag_algorithm_v2 <> vector def
+R493:493 Coq.Init.Datatypes <> S constr
+R495:495 TriDiag_algorithm_v2 <> n:5 var
+rec 511:518 <> A_matrix
+proj 537:539 <> d''
+proj 555:557 <> a''
+proj 577:579 <> c''
+R525:527 Coq.Init.Datatypes <> nat ind
+binder 521:521 <> n:11
+R543:548 TriDiag_algorithm_v2 <> vector def
+R550:550 TriDiag_algorithm_v2 <> n:11 var
+R561:566 TriDiag_algorithm_v2 <> vector def
+R569:569 Coq.Init.Datatypes <> S constr
+R571:571 TriDiag_algorithm_v2 <> n:11 var
+R583:588 TriDiag_algorithm_v2 <> vector def
+R590:590 TriDiag_algorithm_v2 <> n:11 var
+def 608:610 <> mkA
+R617:619 Coq.Init.Datatypes <> nat ind
+binder 613:613 <> n:16
+R629:638 TriDiag_algorithm_v2 <> TriDiagSys rec
+R640:640 TriDiag_algorithm_v2 <> n:16 var
+binder 623:625 <> SLE:17
+R657:657 TriDiag_algorithm_v2 <> d proj
+R661:663 TriDiag_algorithm_v2 <> SLE:17 var
+binder 652:652 <> d:18
+R679:679 TriDiag_algorithm_v2 <> a proj
+R683:685 TriDiag_algorithm_v2 <> SLE:17 var
+binder 674:674 <> a:19
+R701:701 TriDiag_algorithm_v2 <> c proj
+R705:707 TriDiag_algorithm_v2 <> SLE:17 var
+binder 696:696 <> c:20
+R714:727 TriDiag_algorithm_v2 <> Build_A_matrix constr
+R731:731 TriDiag_algorithm_v2 <> d:18 var
+R733:733 TriDiag_algorithm_v2 <> a:19 var
+R735:735 TriDiag_algorithm_v2 <> c:20 var
+def 750:753 <> mkA'
+R760:762 Coq.Init.Datatypes <> nat ind
+binder 756:756 <> n:21
+R772:777 TriDiag_algorithm_v2 <> vector def
+R779:779 TriDiag_algorithm_v2 <> n:21 var
+binder 766:766 <> d:22
+binder 768:768 <> c:23
+R787:792 TriDiag_algorithm_v2 <> vector def
+R795:795 Coq.Init.Datatypes <> S constr
+R797:797 TriDiag_algorithm_v2 <> n:21 var
+binder 783:783 <> a:24
+R804:817 TriDiag_algorithm_v2 <> Build_A_matrix constr
+R821:821 TriDiag_algorithm_v2 <> d:22 var
+R823:823 TriDiag_algorithm_v2 <> a:24 var
+R825:825 TriDiag_algorithm_v2 <> c:23 var
+rec 837:844 <> L_matrix
+proj 863:863 <> l
+proj 883:887 <> one_v
+R851:853 Coq.Init.Datatypes <> nat ind
+binder 847:847 <> n:25
+R867:872 TriDiag_algorithm_v2 <> vector def
+R875:875 Coq.Init.Datatypes <> S constr
+R877:877 TriDiag_algorithm_v2 <> n:25 var
+R891:896 TriDiag_algorithm_v2 <> vector def
+R898:898 TriDiag_algorithm_v2 <> n:25 var
+def 916:918 <> mkL
+R925:927 Coq.Init.Datatypes <> nat ind
+binder 921:921 <> n:29
+R935:940 TriDiag_algorithm_v2 <> vector def
+R943:943 Coq.Init.Datatypes <> S constr
+R945:945 TriDiag_algorithm_v2 <> n:29 var
+binder 931:931 <> l:30
+R954:967 TriDiag_algorithm_v2 <> Build_L_matrix constr
+R971:971 TriDiag_algorithm_v2 <> l:30 var
+R974:981 TriDiag_algorithm_v2 <> mkVector def
+R983:983 TriDiag_algorithm_v2 <> n:29 var
+rec 1047:1054 <> U_matrix
+proj 1073:1073 <> v
+proj 1179:1179 <> u
+R1061:1063 Coq.Init.Datatypes <> nat ind
+binder 1057:1057 <> n:31
+R1077:1082 TriDiag_algorithm_v2 <> vector def
+R1085:1085 Coq.Init.Datatypes <> S constr
+R1087:1087 TriDiag_algorithm_v2 <> n:31 var
+R1183:1188 TriDiag_algorithm_v2 <> vector def
+R1190:1190 TriDiag_algorithm_v2 <> n:31 var
+def 1208:1210 <> mkU
+R1217:1219 Coq.Init.Datatypes <> nat ind
+binder 1213:1213 <> n:35
+R1227:1232 TriDiag_algorithm_v2 <> vector def
+R1235:1235 Coq.Init.Datatypes <> S constr
+R1237:1237 TriDiag_algorithm_v2 <> n:35 var
+binder 1223:1223 <> v:36
+R1246:1251 TriDiag_algorithm_v2 <> vector def
+R1253:1253 TriDiag_algorithm_v2 <> n:35 var
+binder 1242:1242 <> u:37
+R1261:1274 TriDiag_algorithm_v2 <> Build_U_matrix constr
+R1278:1278 TriDiag_algorithm_v2 <> v:36 var
+R1280:1280 TriDiag_algorithm_v2 <> u:37 var
+def 1400:1406 <> ui_find
+R1417:1417 Coq.Reals.Rdefinitions RbaseSymbolsImpl R defax
+binder 1409:1410 <> ci:38
+binder 1412:1413 <> li:39
+R1422:1422 Coq.Reals.Rdefinitions RbaseSymbolsImpl R defax
+R1429:1429 Coq.Reals.Rdefinitions <> ::R_scope:x_'/'_x not
+R1427:1428 TriDiag_algorithm_v2 <> ci:38 var
+R1430:1431 TriDiag_algorithm_v2 <> li:39 var
+def 1446:1452 <> vi_find
+R1460:1460 Coq.Reals.Rdefinitions RbaseSymbolsImpl R defax
+binder 1455:1456 <> di:40
+R1465:1465 Coq.Reals.Rdefinitions RbaseSymbolsImpl R defax
+R1471:1472 TriDiag_algorithm_v2 <> di:40 var
+def 1487:1493 <> l1_find
+R1504:1504 Coq.Reals.Rdefinitions RbaseSymbolsImpl R defax
+binder 1496:1497 <> a1:41
+binder 1499:1500 <> v1:42
+R1509:1509 Coq.Reals.Rdefinitions RbaseSymbolsImpl R defax
+R1516:1516 Coq.Reals.Rdefinitions <> ::R_scope:x_'/'_x not
+R1514:1515 TriDiag_algorithm_v2 <> a1:41 var
+R1517:1518 TriDiag_algorithm_v2 <> v1:42 var
+def 1533:1539 <> li_find
+R1554:1554 Coq.Reals.Rdefinitions RbaseSymbolsImpl R defax
+binder 1542:1543 <> ai:43
+binder 1545:1547 <> ui_:44
+binder 1549:1550 <> vi:45
+R1559:1559 Coq.Reals.Rdefinitions RbaseSymbolsImpl R defax
+R1564:1564 Coq.Reals.Rdefinitions <> ::R_scope:x_'/'_x not
+R1573:1576 Coq.Reals.Rdefinitions <> ::R_scope:x_'/'_x not
+R1567:1569 Coq.Reals.Rdefinitions <> ::R_scope:x_'-'_x not
+R1565:1566 TriDiag_algorithm_v2 <> ai:43 var
+R1570:1572 TriDiag_algorithm_v2 <> ui_:44 var
+R1577:1578 TriDiag_algorithm_v2 <> vi:45 var
+def 1592:1597 <> v_find
+R1604:1606 Coq.Init.Datatypes <> nat ind
+binder 1600:1600 <> n:46
+R1614:1619 TriDiag_algorithm_v2 <> vector def
+R1621:1621 TriDiag_algorithm_v2 <> n:46 var
+binder 1610:1610 <> d:47
+R1626:1631 TriDiag_algorithm_v2 <> vector def
+R1634:1634 Coq.Init.Datatypes <> S constr
+R1636:1636 TriDiag_algorithm_v2 <> n:46 var
+R1650:1650 TriDiag_algorithm_v2 <> n:46 var
+R1667:1670 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1659:1664 TriDiag_algorithm_v2 <> vector def
+R1666:1666 TriDiag_algorithm_v2 <> n:49 var
+R1671:1676 TriDiag_algorithm_v2 <> vector def
+R1679:1679 Coq.Init.Datatypes <> S constr
+R1681:1681 TriDiag_algorithm_v2 <> n:49 var
+binder 1702:1702 <> d:50
+R1707:1707 Coq.Vectors.VectorDef VectorNotations ::vector_scope:'['_x_']' not
+R1709:1709 Coq.Vectors.VectorDef VectorNotations ::vector_scope:'['_x_']' not
+R1716:1716 Coq.Init.Datatypes <> S constr
+binder 1727:1727 <> d:51
+R1746:1747 Coq.Vectors.Vector <> hd def
+R1749:1749 TriDiag_algorithm_v2 <> d:51 var
+binder 1740:1741 <> di:52
+R1769:1770 Coq.Vectors.Vector <> tl def
+R1772:1772 TriDiag_algorithm_v2 <> d:51 var
+binder 1762:1764 <> tld:53
+R1783:1786 Coq.Vectors.VectorDef VectorNotations ::vector_scope:x_'::'_x not
+R1781:1782 TriDiag_algorithm_v2 <> di:52 var
+R1787:1792 TriDiag_algorithm_v2 <> v_find:48 def
+R1794:1796 TriDiag_algorithm_v2 <> tld:53 var
+R1804:1804 TriDiag_algorithm_v2 <> d:47 var
+rec 1816:1825 <> lu_vectors
+proj 1967:1968 <> l'
+proj 1988:1989 <> u'
+R1832:1834 Coq.Init.Datatypes <> nat ind
+binder 1828:1828 <> n:54
+R1972:1977 TriDiag_algorithm_v2 <> vector def
+R1980:1980 Coq.Init.Datatypes <> S constr
+R1982:1982 TriDiag_algorithm_v2 <> n:54 var
+R1993:1998 TriDiag_algorithm_v2 <> vector def
+R2000:2000 TriDiag_algorithm_v2 <> n:54 var
+def 2018:2021 <> mkLU
+R2028:2030 Coq.Init.Datatypes <> nat ind
+binder 2024:2024 <> n:58
+R2038:2043 TriDiag_algorithm_v2 <> vector def
+R2046:2046 Coq.Init.Datatypes <> S constr
+R2048:2048 TriDiag_algorithm_v2 <> n:58 var
+binder 2034:2034 <> l:59
+R2057:2062 TriDiag_algorithm_v2 <> vector def
+R2064:2064 TriDiag_algorithm_v2 <> n:58 var
+binder 2053:2053 <> u:60
+R2072:2087 TriDiag_algorithm_v2 <> Build_lu_vectors constr
+R2091:2091 TriDiag_algorithm_v2 <> l:59 var
+R2093:2093 TriDiag_algorithm_v2 <> u:60 var
+def 2107:2114 <> find_LU'
+R2121:2123 Coq.Init.Datatypes <> nat ind
+binder 2117:2117 <> n:61
+R2133:2138 TriDiag_algorithm_v2 <> vector def
+R2141:2141 Coq.Init.Datatypes <> S constr
+R2143:2143 TriDiag_algorithm_v2 <> n:61 var
+binder 2127:2127 <> a:62
+binder 2129:2129 <> v:63
+R2152:2157 TriDiag_algorithm_v2 <> vector def
+R2159:2159 TriDiag_algorithm_v2 <> n:61 var
+binder 2148:2148 <> c:64
+R2168:2168 Coq.Reals.Rdefinitions RbaseSymbolsImpl R defax
+binder 2163:2165 <> ui_:65
+R2173:2182 TriDiag_algorithm_v2 <> lu_vectors rec
+R2184:2184 TriDiag_algorithm_v2 <> n:61 var
+R2196:2196 TriDiag_algorithm_v2 <> n:61 var
+R2218:2221 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2206:2211 TriDiag_algorithm_v2 <> vector def
+R2214:2214 Coq.Init.Datatypes <> S constr
+R2216:2216 TriDiag_algorithm_v2 <> n:67 var
+R2234:2237 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2222:2227 TriDiag_algorithm_v2 <> vector def
+R2230:2230 Coq.Init.Datatypes <> S constr
+R2232:2232 TriDiag_algorithm_v2 <> n:67 var
+R2246:2249 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2238:2243 TriDiag_algorithm_v2 <> vector def
+R2245:2245 TriDiag_algorithm_v2 <> n:67 var
+R2250:2259 TriDiag_algorithm_v2 <> lu_vectors rec
+R2261:2261 TriDiag_algorithm_v2 <> n:67 var
+binder 2282:2282 <> a:68
+binder 2284:2284 <> v:69
+binder 2286:2286 <> c:70
+R2305:2306 Coq.Vectors.Vector <> hd def
+R2308:2308 TriDiag_algorithm_v2 <> a:68 var
+binder 2299:2300 <> an:71
+R2327:2333 TriDiag_algorithm_v2 <> li_find def
+R2335:2336 TriDiag_algorithm_v2 <> an:71 var
+R2338:2340 TriDiag_algorithm_v2 <> ui_:65 var
+R2343:2344 Coq.Vectors.Vector <> hd def
+R2346:2346 TriDiag_algorithm_v2 <> v:69 var
+binder 2321:2322 <> ln:72
+R2356:2359 TriDiag_algorithm_v2 <> mkLU def
+R2366:2367 Coq.Vectors.VectorDef VectorNotations ::vector_scope:'['_']' not
+R2361:2361 Coq.Vectors.VectorDef VectorNotations ::vector_scope:'['_x_']' not
+R2364:2364 Coq.Vectors.VectorDef VectorNotations ::vector_scope:'['_x_']' not
+R2362:2363 TriDiag_algorithm_v2 <> ln:72 var
+R2373:2373 Coq.Init.Datatypes <> S constr
+binder 2385:2385 <> a:73
+binder 2387:2387 <> v:74
+binder 2389:2389 <> c:75
+R2408:2409 Coq.Vectors.Vector <> hd def
+R2411:2411 TriDiag_algorithm_v2 <> a:73 var
+binder 2402:2403 <> ai:76
+R2430:2431 Coq.Vectors.Vector <> hd def
+R2433:2433 TriDiag_algorithm_v2 <> c:75 var
+binder 2424:2425 <> ci:77
+R2452:2453 Coq.Vectors.Vector <> hd def
+R2455:2455 TriDiag_algorithm_v2 <> v:74 var
+binder 2446:2447 <> vi:78
+R2476:2477 Coq.Vectors.Vector <> tl def
+R2479:2479 TriDiag_algorithm_v2 <> a:73 var
+binder 2469:2471 <> tla:79
+R2499:2500 Coq.Vectors.Vector <> tl def
+R2502:2502 TriDiag_algorithm_v2 <> c:75 var
+binder 2492:2494 <> tlc:80
+R2522:2523 Coq.Vectors.Vector <> tl def
+R2525:2525 TriDiag_algorithm_v2 <> v:74 var
+binder 2515:2517 <> tlv:81
+R2545:2551 TriDiag_algorithm_v2 <> li_find def
+R2553:2554 TriDiag_algorithm_v2 <> ai:76 var
+R2556:2558 TriDiag_algorithm_v2 <> ui_:65 var
+R2560:2561 TriDiag_algorithm_v2 <> vi:78 var
+binder 2539:2540 <> li:82
+R2580:2586 TriDiag_algorithm_v2 <> ui_find def
+R2588:2589 TriDiag_algorithm_v2 <> ci:77 var
+R2591:2592 TriDiag_algorithm_v2 <> li:82 var
+binder 2574:2575 <> ui:83
+R2612:2619 TriDiag_algorithm_v2 <> find_LU':66 def
+R2633:2634 TriDiag_algorithm_v2 <> ui:83 var
+R2629:2631 TriDiag_algorithm_v2 <> tlc:80 var
+R2625:2627 TriDiag_algorithm_v2 <> tlv:81 var
+R2621:2623 TriDiag_algorithm_v2 <> tla:79 var
+binder 2606:2607 <> LU:84
+R2654:2655 TriDiag_algorithm_v2 <> l' proj
+R2659:2660 TriDiag_algorithm_v2 <> LU:84 var
+binder 2648:2649 <> l':85
+R2678:2679 TriDiag_algorithm_v2 <> u' proj
+R2683:2684 TriDiag_algorithm_v2 <> LU:84 var
+binder 2673:2674 <> u':86
+R2705:2708 Coq.Vectors.VectorDef VectorNotations ::vector_scope:x_'::'_x not
+R2703:2704 TriDiag_algorithm_v2 <> li:82 var
+R2709:2710 TriDiag_algorithm_v2 <> l':85 var
+binder 2698:2698 <> l:87
+R2730:2733 Coq.Vectors.VectorDef VectorNotations ::vector_scope:x_'::'_x not
+R2728:2729 TriDiag_algorithm_v2 <> ui:83 var
+R2734:2735 TriDiag_algorithm_v2 <> u':86 var
+binder 2723:2723 <> u:88
+R2745:2748 TriDiag_algorithm_v2 <> mkLU def
+R2752:2752 TriDiag_algorithm_v2 <> u:88 var
+R2750:2750 TriDiag_algorithm_v2 <> l:87 var
+R2760:2760 TriDiag_algorithm_v2 <> a:62 var
+R2762:2762 TriDiag_algorithm_v2 <> v:63 var
+R2764:2764 TriDiag_algorithm_v2 <> c:64 var
+def 2780:2786 <> find_LU
+R2793:2795 Coq.Init.Datatypes <> nat ind
+binder 2789:2789 <> n:89
+R2803:2808 TriDiag_algorithm_v2 <> vector def
+R2810:2810 TriDiag_algorithm_v2 <> n:89 var
+binder 2799:2799 <> c:90
+R2820:2825 TriDiag_algorithm_v2 <> vector def
+R2828:2828 Coq.Init.Datatypes <> S constr
+R2830:2830 TriDiag_algorithm_v2 <> n:89 var
+binder 2814:2814 <> a:91
+binder 2816:2816 <> v:92
+R2836:2845 TriDiag_algorithm_v2 <> lu_vectors rec
+R2847:2847 TriDiag_algorithm_v2 <> n:89 var
+R2860:2860 TriDiag_algorithm_v2 <> n:89 var
+R2881:2884 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2869:2874 TriDiag_algorithm_v2 <> vector def
+R2877:2877 Coq.Init.Datatypes <> S constr
+R2879:2879 TriDiag_algorithm_v2 <> n:93 var
+R2893:2896 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2885:2890 TriDiag_algorithm_v2 <> vector def
+R2892:2892 TriDiag_algorithm_v2 <> n:93 var
+R2909:2912 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2897:2902 TriDiag_algorithm_v2 <> vector def
+R2905:2905 Coq.Init.Datatypes <> S constr
+R2907:2907 TriDiag_algorithm_v2 <> n:93 var
+R2913:2922 TriDiag_algorithm_v2 <> lu_vectors rec
+R2924:2924 TriDiag_algorithm_v2 <> n:93 var
+binder 2944:2944 <> v:94
+binder 2946:2946 <> c:95
+binder 2948:2948 <> a:96
+R2968:2969 Coq.Vectors.Vector <> hd def
+R2971:2971 TriDiag_algorithm_v2 <> a:96 var
+binder 2962:2963 <> a1:97
+R2980:2983 TriDiag_algorithm_v2 <> mkLU def
+R2990:2991 Coq.Vectors.VectorDef VectorNotations ::vector_scope:'['_']' not
+R2985:2985 Coq.Vectors.VectorDef VectorNotations ::vector_scope:'['_x_']' not
+R2988:2988 Coq.Vectors.VectorDef VectorNotations ::vector_scope:'['_x_']' not
+R2986:2987 TriDiag_algorithm_v2 <> a1:97 var
+R2997:2997 Coq.Init.Datatypes <> S constr
+binder 3008:3008 <> v:98
+binder 3010:3010 <> c:99
+binder 3012:3012 <> a:100
+R3032:3033 Coq.Vectors.Vector <> hd def
+R3035:3035 TriDiag_algorithm_v2 <> a:100 var
+binder 3026:3027 <> a1:101
+R3054:3055 Coq.Vectors.Vector <> hd def
+R3057:3057 TriDiag_algorithm_v2 <> c:99 var
+binder 3048:3049 <> c1:102
+R3076:3077 Coq.Vectors.Vector <> hd def
+R3079:3079 TriDiag_algorithm_v2 <> v:98 var
+binder 3070:3071 <> v1:103
+R3100:3101 Coq.Vectors.Vector <> tl def
+R3103:3103 TriDiag_algorithm_v2 <> a:100 var
+binder 3093:3095 <> tla:104
+R3123:3124 Coq.Vectors.Vector <> tl def
+R3126:3126 TriDiag_algorithm_v2 <> c:99 var
+binder 3116:3118 <> tlc:105
+R3146:3147 Coq.Vectors.Vector <> tl def
+R3149:3149 TriDiag_algorithm_v2 <> v:98 var
+binder 3139:3141 <> tlv:106
+R3169:3175 TriDiag_algorithm_v2 <> l1_find def
+R3177:3178 TriDiag_algorithm_v2 <> a1:101 var
+R3180:3181 TriDiag_algorithm_v2 <> v1:103 var
+binder 3163:3164 <> l1:107
+R3200:3206 TriDiag_algorithm_v2 <> ui_find def
+R3208:3209 TriDiag_algorithm_v2 <> c1:102 var
+R3211:3212 TriDiag_algorithm_v2 <> l1:107 var
+binder 3194:3195 <> u1:108
+R3232:3239 TriDiag_algorithm_v2 <> find_LU' def
+R3253:3254 TriDiag_algorithm_v2 <> u1:108 var
+R3249:3251 TriDiag_algorithm_v2 <> tlc:105 var
+R3245:3247 TriDiag_algorithm_v2 <> tlv:106 var
+R3241:3243 TriDiag_algorithm_v2 <> tla:104 var
+binder 3226:3227 <> LU:109
+R3274:3275 TriDiag_algorithm_v2 <> l' proj
+R3279:3280 TriDiag_algorithm_v2 <> LU:109 var
+binder 3268:3269 <> l':110
+R3298:3299 TriDiag_algorithm_v2 <> u' proj
+R3303:3304 TriDiag_algorithm_v2 <> LU:109 var
+binder 3293:3294 <> u':111
+R3325:3328 Coq.Vectors.VectorDef VectorNotations ::vector_scope:x_'::'_x not
+R3323:3324 TriDiag_algorithm_v2 <> l1:107 var
+R3329:3330 TriDiag_algorithm_v2 <> l':110 var
+binder 3318:3318 <> l:112
+R3350:3353 Coq.Vectors.VectorDef VectorNotations ::vector_scope:x_'::'_x not
+R3348:3349 TriDiag_algorithm_v2 <> u1:108 var
+R3354:3355 TriDiag_algorithm_v2 <> u':111 var
+binder 3343:3343 <> u:113
+R3365:3368 TriDiag_algorithm_v2 <> mkLU def
+R3372:3372 TriDiag_algorithm_v2 <> u:113 var
+R3370:3370 TriDiag_algorithm_v2 <> l:112 var
+R3380:3380 TriDiag_algorithm_v2 <> v:92 var
+R3382:3382 TriDiag_algorithm_v2 <> c:90 var
+R3384:3384 TriDiag_algorithm_v2 <> a:91 var
+def 3400:3405 <> make_L
+R3412:3414 Coq.Init.Datatypes <> nat ind
+binder 3408:3408 <> n:114
+R3424:3433 TriDiag_algorithm_v2 <> TriDiagSys rec
+R3435:3435 TriDiag_algorithm_v2 <> n:114 var
+binder 3418:3420 <> SLE:115
+R3440:3447 TriDiag_algorithm_v2 <> L_matrix rec
+R3449:3449 TriDiag_algorithm_v2 <> n:114 var
+R3466:3466 TriDiag_algorithm_v2 <> d proj
+R3470:3472 TriDiag_algorithm_v2 <> SLE:115 var
+binder 3461:3461 <> d:116
+R3488:3488 TriDiag_algorithm_v2 <> a proj
+R3492:3494 TriDiag_algorithm_v2 <> SLE:115 var
+binder 3483:3483 <> a:117
+R3510:3510 TriDiag_algorithm_v2 <> c proj
+R3514:3516 TriDiag_algorithm_v2 <> SLE:115 var
+binder 3505:3505 <> c:118
+R3533:3538 TriDiag_algorithm_v2 <> v_find def
+R3540:3540 TriDiag_algorithm_v2 <> d:116 var
+binder 3528:3528 <> v:119
+R3558:3564 TriDiag_algorithm_v2 <> find_LU def
+R3570:3570 TriDiag_algorithm_v2 <> v:119 var
+R3568:3568 TriDiag_algorithm_v2 <> a:117 var
+R3566:3566 TriDiag_algorithm_v2 <> c:118 var
+binder 3552:3553 <> LU:120
+R3586:3587 TriDiag_algorithm_v2 <> l' proj
+R3591:3592 TriDiag_algorithm_v2 <> LU:120 var
+binder 3581:3581 <> l:121
+R3599:3601 TriDiag_algorithm_v2 <> mkL def
+R3603:3603 TriDiag_algorithm_v2 <> l:121 var
+def 3619:3624 <> make_U
+R3631:3633 Coq.Init.Datatypes <> nat ind
+binder 3627:3627 <> n:122
+R3643:3652 TriDiag_algorithm_v2 <> TriDiagSys rec
+R3654:3654 TriDiag_algorithm_v2 <> n:122 var
+binder 3637:3639 <> SLE:123
+R3659:3666 TriDiag_algorithm_v2 <> U_matrix rec
+R3668:3668 TriDiag_algorithm_v2 <> n:122 var
+R3685:3685 TriDiag_algorithm_v2 <> d proj
+R3689:3691 TriDiag_algorithm_v2 <> SLE:123 var
+binder 3680:3680 <> d:124
+R3707:3707 TriDiag_algorithm_v2 <> a proj
+R3711:3713 TriDiag_algorithm_v2 <> SLE:123 var
+binder 3702:3702 <> a:125
+R3729:3729 TriDiag_algorithm_v2 <> c proj
+R3733:3735 TriDiag_algorithm_v2 <> SLE:123 var
+binder 3724:3724 <> c:126
+R3752:3757 TriDiag_algorithm_v2 <> v_find def
+R3759:3759 TriDiag_algorithm_v2 <> d:124 var
+binder 3747:3747 <> v:127
+R3777:3783 TriDiag_algorithm_v2 <> find_LU def
+R3789:3789 TriDiag_algorithm_v2 <> v:127 var
+R3787:3787 TriDiag_algorithm_v2 <> a:125 var
+R3785:3785 TriDiag_algorithm_v2 <> c:126 var
+binder 3771:3772 <> LU:128
+R3805:3806 TriDiag_algorithm_v2 <> u' proj
+R3810:3811 TriDiag_algorithm_v2 <> LU:128 var
+binder 3800:3800 <> u:129
+R3818:3820 TriDiag_algorithm_v2 <> mkU def
+R3824:3824 TriDiag_algorithm_v2 <> u:129 var
+R3822:3822 TriDiag_algorithm_v2 <> v:127 var
+def 3838:3844 <> LU_mul'
+R3851:3853 Coq.Init.Datatypes <> nat ind
+binder 3847:3847 <> n:130
+R3863:3868 TriDiag_algorithm_v2 <> vector def
+R3871:3871 Coq.Init.Datatypes <> S constr
+R3874:3874 TriDiag_algorithm_v2 <> n:130 var
+binder 3857:3857 <> v:131
+binder 3859:3859 <> l:132
+R3882:3887 TriDiag_algorithm_v2 <> vector def
+R3889:3889 TriDiag_algorithm_v2 <> n:130 var
+binder 3878:3878 <> u:133
+R3903:3903 Coq.Reals.Rdefinitions RbaseSymbolsImpl R defax
+binder 3893:3895 <> vi_:134
+binder 3897:3899 <> ui_:135
+R3908:3915 TriDiag_algorithm_v2 <> A_matrix rec
+R3917:3917 TriDiag_algorithm_v2 <> n:130 var
+R3930:3930 TriDiag_algorithm_v2 <> n:130 var
+R3951:3954 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R3939:3944 TriDiag_algorithm_v2 <> vector def
+R3947:3947 Coq.Init.Datatypes <> S constr
+R3949:3949 TriDiag_algorithm_v2 <> n:137 var
+R3967:3970 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R3955:3960 TriDiag_algorithm_v2 <> vector def
+R3963:3963 Coq.Init.Datatypes <> S constr
+R3965:3965 TriDiag_algorithm_v2 <> n:137 var
+R3979:3982 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R3971:3976 TriDiag_algorithm_v2 <> vector def
+R3978:3978 TriDiag_algorithm_v2 <> n:137 var
+R3983:3990 TriDiag_algorithm_v2 <> A_matrix rec
+R3992:3992 TriDiag_algorithm_v2 <> n:137 var
+binder 4012:4012 <> v:138
+binder 4014:4014 <> l:139
+binder 4016:4016 <> u:140
+R4035:4036 Coq.Vectors.Vector <> hd def
+R4038:4038 TriDiag_algorithm_v2 <> l:139 var
+binder 4029:4030 <> ln:141
+R4057:4058 Coq.Vectors.Vector <> hd def
+R4060:4060 TriDiag_algorithm_v2 <> v:138 var
+binder 4051:4052 <> vn:142
+R4082:4085 Coq.Reals.Rdefinitions <> ::R_scope:x_'+'_x not
+R4093:4093 Coq.Reals.Rdefinitions <> ::R_scope:x_'+'_x not
+R4079:4081 TriDiag_algorithm_v2 <> ui_:135 var
+R4088:4090 Coq.Reals.Rdefinitions <> ::R_scope:x_'*'_x not
+R4086:4087 TriDiag_algorithm_v2 <> ln:141 var
+R4091:4092 TriDiag_algorithm_v2 <> vn:142 var
+binder 4073:4074 <> an:143
+R4102:4105 TriDiag_algorithm_v2 <> mkA' def
+R4113:4113 Coq.Vectors.VectorDef VectorNotations ::vector_scope:'['_x_']' not
+R4116:4116 Coq.Vectors.VectorDef VectorNotations ::vector_scope:'['_x_']' not
+R4114:4115 TriDiag_algorithm_v2 <> an:143 var
+R4110:4111 Coq.Vectors.VectorDef VectorNotations ::vector_scope:'['_']' not
+R4107:4108 Coq.Vectors.VectorDef VectorNotations ::vector_scope:'['_']' not
+R4122:4122 Coq.Init.Datatypes <> S constr
+binder 4133:4133 <> v:144
+binder 4135:4135 <> l:145
+binder 4137:4137 <> u:146
+R4156:4157 Coq.Vectors.Vector <> hd def
+R4159:4159 TriDiag_algorithm_v2 <> v:144 var
+binder 4150:4151 <> vi:147
+R4178:4179 Coq.Vectors.Vector <> hd def
+R4181:4181 TriDiag_algorithm_v2 <> l:145 var
+binder 4172:4173 <> li:148
+R4200:4201 Coq.Vectors.Vector <> hd def
+R4203:4203 TriDiag_algorithm_v2 <> u:146 var
+binder 4194:4195 <> ui:149
+R4223:4224 Coq.Vectors.Vector <> tl def
+R4226:4226 TriDiag_algorithm_v2 <> v:144 var
+binder 4216:4218 <> tlv:150
+R4246:4247 Coq.Vectors.Vector <> tl def
+R4249:4249 TriDiag_algorithm_v2 <> l:145 var
+binder 4239:4241 <> tll:151
+R4269:4270 Coq.Vectors.Vector <> tl def
+R4272:4272 TriDiag_algorithm_v2 <> u:146 var
+binder 4262:4264 <> tlu:152
+R4295:4298 Coq.Reals.Rdefinitions <> ::R_scope:x_'+'_x not
+R4306:4306 Coq.Reals.Rdefinitions <> ::R_scope:x_'+'_x not
+R4292:4294 TriDiag_algorithm_v2 <> ui_:135 var
+R4301:4303 Coq.Reals.Rdefinitions <> ::R_scope:x_'*'_x not
+R4299:4300 TriDiag_algorithm_v2 <> li:148 var
+R4304:4305 TriDiag_algorithm_v2 <> vi:147 var
+binder 4286:4287 <> ai:153
+R4327:4329 Coq.Reals.Rdefinitions <> ::R_scope:x_'*'_x not
+R4325:4326 TriDiag_algorithm_v2 <> li:148 var
+R4330:4331 TriDiag_algorithm_v2 <> ui:149 var
+binder 4319:4320 <> ci:154
+R4350:4356 TriDiag_algorithm_v2 <> LU_mul':136 def
+R4373:4374 TriDiag_algorithm_v2 <> ui:149 var
+R4370:4371 TriDiag_algorithm_v2 <> vi:147 var
+R4366:4368 TriDiag_algorithm_v2 <> tlu:152 var
+R4362:4364 TriDiag_algorithm_v2 <> tll:151 var
+R4358:4360 TriDiag_algorithm_v2 <> tlv:150 var
+binder 4345:4345 <> A:155
+R4393:4395 TriDiag_algorithm_v2 <> d'' proj
+R4399:4399 TriDiag_algorithm_v2 <> A:155 var
+binder 4387:4388 <> d':156
+R4418:4420 TriDiag_algorithm_v2 <> a'' proj
+R4424:4424 TriDiag_algorithm_v2 <> A:155 var
+binder 4412:4413 <> a':157
+R4443:4445 TriDiag_algorithm_v2 <> c'' proj
+R4449:4449 TriDiag_algorithm_v2 <> A:155 var
+binder 4437:4438 <> c':158
+R4470:4473 Coq.Vectors.VectorDef VectorNotations ::vector_scope:x_'::'_x not
+R4468:4469 TriDiag_algorithm_v2 <> vi:147 var
+R4474:4475 TriDiag_algorithm_v2 <> d':156 var
+binder 4463:4463 <> d:159
+R4495:4498 Coq.Vectors.VectorDef VectorNotations ::vector_scope:x_'::'_x not
+R4493:4494 TriDiag_algorithm_v2 <> ai:153 var
+R4499:4500 TriDiag_algorithm_v2 <> a':157 var
+binder 4488:4488 <> a:160
+R4520:4523 Coq.Vectors.VectorDef VectorNotations ::vector_scope:x_'::'_x not
+R4518:4519 TriDiag_algorithm_v2 <> ci:154 var
+R4524:4525 TriDiag_algorithm_v2 <> c':158 var
+binder 4513:4513 <> c:161
+R4534:4537 TriDiag_algorithm_v2 <> mkA' def
+R4543:4543 TriDiag_algorithm_v2 <> a:160 var
+R4541:4541 TriDiag_algorithm_v2 <> c:161 var
+R4539:4539 TriDiag_algorithm_v2 <> d:159 var
+R4552:4552 TriDiag_algorithm_v2 <> v:131 var
+R4554:4554 TriDiag_algorithm_v2 <> l:132 var
+R4556:4556 TriDiag_algorithm_v2 <> u:133 var
+def 4572:4577 <> LU_mul
+R4584:4586 Coq.Init.Datatypes <> nat ind
+binder 4580:4580 <> n:162
+R4594:4601 TriDiag_algorithm_v2 <> L_matrix rec
+R4603:4603 TriDiag_algorithm_v2 <> n:162 var
+binder 4590:4590 <> L:163
+R4611:4618 TriDiag_algorithm_v2 <> U_matrix rec
+R4620:4620 TriDiag_algorithm_v2 <> n:162 var
+binder 4607:4607 <> U:164
+R4625:4632 TriDiag_algorithm_v2 <> A_matrix rec
+R4634:4634 TriDiag_algorithm_v2 <> n:162 var
+R4650:4650 TriDiag_algorithm_v2 <> l proj
+R4654:4654 TriDiag_algorithm_v2 <> L:163 var
+binder 4645:4645 <> l:165
+R4670:4670 TriDiag_algorithm_v2 <> v proj
+R4674:4674 TriDiag_algorithm_v2 <> U:164 var
+binder 4665:4665 <> v:166
+R4690:4690 TriDiag_algorithm_v2 <> u proj
+R4694:4694 TriDiag_algorithm_v2 <> U:164 var
+binder 4685:4685 <> u:167
+R4707:4707 TriDiag_algorithm_v2 <> n:162 var
+R4728:4731 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R4716:4721 TriDiag_algorithm_v2 <> vector def
+R4724:4724 Coq.Init.Datatypes <> S constr
+R4726:4726 TriDiag_algorithm_v2 <> n:168 var
+R4744:4747 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R4732:4737 TriDiag_algorithm_v2 <> vector def
+R4740:4740 Coq.Init.Datatypes <> S constr
+R4742:4742 TriDiag_algorithm_v2 <> n:168 var
+R4756:4759 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R4748:4753 TriDiag_algorithm_v2 <> vector def
+R4755:4755 TriDiag_algorithm_v2 <> n:168 var
+R4760:4767 TriDiag_algorithm_v2 <> A_matrix rec
+R4769:4769 TriDiag_algorithm_v2 <> n:168 var
+binder 4791:4791 <> l:169
+binder 4793:4793 <> v:170
+binder 4795:4795 <> u:171
+R4816:4817 Coq.Vectors.Vector <> hd def
+R4819:4819 TriDiag_algorithm_v2 <> l:169 var
+binder 4810:4811 <> l1:172
+R4840:4841 Coq.Vectors.Vector <> hd def
+R4843:4843 TriDiag_algorithm_v2 <> v:170 var
+binder 4834:4835 <> v1:173
+R4866:4868 Coq.Reals.Rdefinitions <> ::R_scope:x_'*'_x not
+R4864:4865 TriDiag_algorithm_v2 <> l1:172 var
+R4869:4870 TriDiag_algorithm_v2 <> v1:173 var
+binder 4858:4859 <> a1:174
+R4881:4884 TriDiag_algorithm_v2 <> mkA' def
+R4892:4892 Coq.Vectors.VectorDef VectorNotations ::vector_scope:'['_x_']' not
+R4895:4895 Coq.Vectors.VectorDef VectorNotations ::vector_scope:'['_x_']' not
+R4893:4894 TriDiag_algorithm_v2 <> a1:174 var
+R4889:4890 Coq.Vectors.VectorDef VectorNotations ::vector_scope:'['_']' not
+R4886:4887 Coq.Vectors.VectorDef VectorNotations ::vector_scope:'['_']' not
+R4903:4903 Coq.Init.Datatypes <> S constr
+binder 4914:4914 <> l:175
+binder 4916:4916 <> v:176
+binder 4918:4918 <> u:177
+R4940:4941 Coq.Vectors.Vector <> hd def
+R4943:4943 TriDiag_algorithm_v2 <> l:175 var
+binder 4934:4935 <> l1:178
+R4964:4965 Coq.Vectors.Vector <> hd def
+R4967:4967 TriDiag_algorithm_v2 <> v:176 var
+binder 4958:4959 <> v1:179
+R4988:4989 Coq.Vectors.Vector <> hd def
+R4991:4991 TriDiag_algorithm_v2 <> u:177 var
+binder 4982:4983 <> u1:180
+R5013:5014 Coq.Vectors.Vector <> tl def
+R5016:5016 TriDiag_algorithm_v2 <> v:176 var
+binder 5006:5008 <> tlv:181
+R5038:5039 Coq.Vectors.Vector <> tl def
+R5041:5041 TriDiag_algorithm_v2 <> l:175 var
+binder 5031:5033 <> tll:182
+R5063:5064 Coq.Vectors.Vector <> tl def
+R5066:5066 TriDiag_algorithm_v2 <> u:177 var
+binder 5056:5058 <> tlu:183
+R5096:5098 Coq.Reals.Rdefinitions <> ::R_scope:x_'*'_x not
+R5094:5095 TriDiag_algorithm_v2 <> l1:178 var
+R5099:5100 TriDiag_algorithm_v2 <> v1:179 var
+binder 5088:5089 <> a1:184
+R5123:5125 Coq.Reals.Rdefinitions <> ::R_scope:x_'*'_x not
+R5121:5122 TriDiag_algorithm_v2 <> l1:178 var
+R5126:5127 TriDiag_algorithm_v2 <> u1:180 var
+binder 5115:5116 <> c1:185
+R5148:5154 TriDiag_algorithm_v2 <> LU_mul' def
+R5171:5172 TriDiag_algorithm_v2 <> u1:180 var
+R5168:5169 TriDiag_algorithm_v2 <> v1:179 var
+R5164:5166 TriDiag_algorithm_v2 <> tlu:183 var
+R5160:5162 TriDiag_algorithm_v2 <> tll:182 var
+R5156:5158 TriDiag_algorithm_v2 <> tlv:181 var
+binder 5143:5143 <> A:186
+R5194:5196 TriDiag_algorithm_v2 <> d'' proj
+R5200:5200 TriDiag_algorithm_v2 <> A:186 var
+binder 5188:5189 <> d':187
+R5221:5223 TriDiag_algorithm_v2 <> a'' proj
+R5227:5227 TriDiag_algorithm_v2 <> A:186 var
+binder 5215:5216 <> a':188
+R5248:5250 TriDiag_algorithm_v2 <> c'' proj
+R5254:5254 TriDiag_algorithm_v2 <> A:186 var
+binder 5242:5243 <> c':189
+R5277:5280 Coq.Vectors.VectorDef VectorNotations ::vector_scope:x_'::'_x not
+R5275:5276 TriDiag_algorithm_v2 <> v1:179 var
+R5281:5282 TriDiag_algorithm_v2 <> d':187 var
+binder 5270:5270 <> d:190
+R5304:5307 Coq.Vectors.VectorDef VectorNotations ::vector_scope:x_'::'_x not
+R5302:5303 TriDiag_algorithm_v2 <> a1:184 var
+R5308:5309 TriDiag_algorithm_v2 <> a':188 var
+binder 5297:5297 <> a:191
+R5331:5334 Coq.Vectors.VectorDef VectorNotations ::vector_scope:x_'::'_x not
+R5329:5330 TriDiag_algorithm_v2 <> c1:185 var
+R5335:5336 TriDiag_algorithm_v2 <> c':189 var
+binder 5324:5324 <> c:192
+R5347:5350 TriDiag_algorithm_v2 <> mkA' def
+R5356:5356 TriDiag_algorithm_v2 <> a:191 var
+R5354:5354 TriDiag_algorithm_v2 <> c:192 var
+R5352:5352 TriDiag_algorithm_v2 <> d:190 var
+R5366:5366 TriDiag_algorithm_v2 <> l:165 var
+R5368:5368 TriDiag_algorithm_v2 <> v:166 var
+R5370:5370 TriDiag_algorithm_v2 <> u:167 var
+def 5431:5443 <> check_nonzero
+R5450:5452 Coq.Init.Datatypes <> nat ind
+binder 5446:5446 <> n:193
+R5460:5465 TriDiag_algorithm_v2 <> vector def
+R5467:5467 TriDiag_algorithm_v2 <> n:193 var
+binder 5456:5456 <> v:194
+R5472:5475 Coq.Init.Datatypes <> bool ind
+R5488:5488 TriDiag_algorithm_v2 <> v:194 var
+R5499:5500 Coq.Vectors.VectorDef VectorNotations ::vector_scope:'['_']' not
+R5505:5508 Coq.Init.Datatypes <> true constr
+R5515:5518 Coq.Vectors.VectorDef VectorNotations ::vector_scope:x_'::'_x not
+R5519:5519 Coq.Vectors.Vector <> t ind
+R5527:5534 Coq.Reals.RIneq <> Req_EM_T thm
+R5556:5568 TriDiag_algorithm_v2 <> check_nonzero:195 def
+R5545:5549 Coq.Init.Datatypes <> false constr
+def 5593:5598 <> magicL
+R5605:5607 Coq.Init.Datatypes <> nat ind
+binder 5601:5601 <> n:197
+R5615:5622 TriDiag_algorithm_v2 <> L_matrix rec
+R5624:5624 TriDiag_algorithm_v2 <> n:197 var
+binder 5611:5611 <> L:198
+R5648:5648 TriDiag_algorithm_v2 <> l proj
+R5652:5652 TriDiag_algorithm_v2 <> L:198 var
+binder 5643:5643 <> l:199
+R5677:5689 TriDiag_algorithm_v2 <> check_nonzero def
+R5691:5691 TriDiag_algorithm_v2 <> l:199 var
+binder 5663:5672 <> l_not_zero:200
+R5709:5711 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R5699:5708 TriDiag_algorithm_v2 <> l_not_zero:200 var
+R5712:5715 Coq.Init.Datatypes <> true constr
+def 5732:5737 <> magicU
+R5744:5746 Coq.Init.Datatypes <> nat ind
+binder 5740:5740 <> n:201
+R5754:5761 TriDiag_algorithm_v2 <> U_matrix rec
+R5763:5763 TriDiag_algorithm_v2 <> n:201 var
+binder 5750:5750 <> U:202
+R5787:5787 TriDiag_algorithm_v2 <> u proj
+R5791:5791 TriDiag_algorithm_v2 <> U:202 var
+binder 5782:5782 <> u:203
+R5816:5828 TriDiag_algorithm_v2 <> check_nonzero def
+R5830:5830 TriDiag_algorithm_v2 <> u:203 var
+binder 5802:5811 <> u_not_zero:204
+R5848:5850 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R5838:5847 TriDiag_algorithm_v2 <> u_not_zero:204 var
+R5851:5854 Coq.Init.Datatypes <> true constr
+def 5871:5883 <> is_consistent
+R5890:5892 Coq.Init.Datatypes <> nat ind
+binder 5886:5886 <> n:205
+R5902:5911 TriDiag_algorithm_v2 <> TriDiagSys rec
+R5913:5913 TriDiag_algorithm_v2 <> n:205 var
+binder 5896:5898 <> SLE:206
+R5937:5942 TriDiag_algorithm_v2 <> make_L def
+R5944:5946 TriDiag_algorithm_v2 <> SLE:206 var
+binder 5932:5932 <> L:207
+R5962:5967 TriDiag_algorithm_v2 <> make_U def
+R5969:5971 TriDiag_algorithm_v2 <> SLE:206 var
+binder 5957:5957 <> U:208
+R5986:5989 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R5978:5983 TriDiag_algorithm_v2 <> magicL def
+R5985:5985 TriDiag_algorithm_v2 <> L:207 var
+R5990:5995 TriDiag_algorithm_v2 <> magicU def
+R5997:5997 TriDiag_algorithm_v2 <> U:208 var
+prf 6059:6069 <> no_brackets
+R6092:6092 Coq.Reals.Rdefinitions RbaseSymbolsImpl R defax
+binder 6081:6082 <> r1:209
+binder 6084:6085 <> r2:210
+binder 6087:6088 <> r3:211
+R6116:6118 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R6106:6108 Coq.Reals.Rdefinitions <> ::R_scope:x_'*'_x not
+R6101:6103 Coq.Reals.Rdefinitions <> ::R_scope:x_'*'_x not
+R6099:6100 TriDiag_algorithm_v2 <> r1:209 var
+R6104:6105 TriDiag_algorithm_v2 <> r2:210 var
+R6109:6110 Coq.Reals.Rdefinitions <> ::R_scope:'/'_x not
+R6111:6112 TriDiag_algorithm_v2 <> r3:211 var
+R6122:6125 Coq.Reals.Rdefinitions <> ::R_scope:x_'*'_x not
+R6135:6135 Coq.Reals.Rdefinitions <> ::R_scope:x_'*'_x not
+R6120:6121 TriDiag_algorithm_v2 <> r1:209 var
+R6128:6130 Coq.Reals.Rdefinitions <> ::R_scope:x_'*'_x not
+R6126:6127 TriDiag_algorithm_v2 <> r2:210 var
+R6131:6132 Coq.Reals.Rdefinitions <> ::R_scope:'/'_x not
+R6133:6134 TriDiag_algorithm_v2 <> r3:211 var
+R6175:6185 Coq.Reals.Raxioms <> Rmult_assoc thm
+R6175:6185 Coq.Reals.Raxioms <> Rmult_assoc thm
+prf 6200:6210 <> hd_eq_one_v
+R6226:6231 TriDiag_algorithm_v2 <> vector def
+binder 6222:6222 <> b:212
+R6243:6245 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R6237:6237 Coq.Vectors.VectorDef VectorNotations ::vector_scope:'['_x_']' not
+R6242:6242 Coq.Vectors.VectorDef VectorNotations ::vector_scope:'['_x_']' not
+R6238:6239 Coq.Vectors.Vector <> hd def
+R6241:6241 TriDiag_algorithm_v2 <> b:212 var
+R6246:6246 TriDiag_algorithm_v2 <> b:212 var
+prf 6284:6290 <> rev_one
+binder 6302:6302 <> A:213
+R6317:6317 TriDiag_algorithm_v2 <> A:213 var
+binder 6313:6313 <> x:214
+R6330:6332 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R6323:6325 Coq.Vectors.Vector <> rev def
+R6327:6327 Coq.Vectors.VectorDef VectorNotations ::vector_scope:'['_x_']' not
+R6329:6329 Coq.Vectors.VectorDef VectorNotations ::vector_scope:'['_x_']' not
+R6328:6328 TriDiag_algorithm_v2 <> x:214 var
+R6333:6333 Coq.Vectors.VectorDef VectorNotations ::vector_scope:'['_x_']' not
+R6335:6335 Coq.Vectors.VectorDef VectorNotations ::vector_scope:'['_x_']' not
+R6334:6334 TriDiag_algorithm_v2 <> x:214 var
+R6368:6370 Coq.Vectors.Vector <> rev def
+R6391:6400 Coq.Vectors.Vector <> rev_append def
+prf 6429:6437 <> v0_eq_nil
+R6453:6458 TriDiag_algorithm_v2 <> vector def
+binder 6449:6449 <> v:215
+R6465:6467 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R6464:6464 TriDiag_algorithm_v2 <> v:215 var
+R6468:6469 Coq.Vectors.VectorDef VectorNotations ::vector_scope:'['_']' not
+prf 6504:6515 <> vec_eq_hd_tl
+R6531:6533 Coq.Init.Datatypes <> nat ind
+binder 6527:6527 <> n:216
+R6541:6546 TriDiag_algorithm_v2 <> vector def
+R6549:6549 Coq.Init.Datatypes <> S constr
+R6551:6551 TriDiag_algorithm_v2 <> n:216 var
+binder 6537:6537 <> b:217
+R6557:6559 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R6556:6556 TriDiag_algorithm_v2 <> b:217 var
+R6564:6567 Coq.Vectors.VectorDef VectorNotations ::vector_scope:x_'::'_x not
+R6560:6561 Coq.Vectors.Vector <> hd def
+R6563:6563 TriDiag_algorithm_v2 <> b:217 var
+R6568:6569 Coq.Vectors.Vector <> tl def
+R6571:6571 TriDiag_algorithm_v2 <> b:217 var
+prf 6598:6606 <> rev_hd_tl
+R6622:6624 Coq.Init.Datatypes <> nat ind
+binder 6618:6618 <> n:218
+R6632:6637 TriDiag_algorithm_v2 <> vector def
+R6640:6640 Coq.Init.Datatypes <> S constr
+R6642:6642 TriDiag_algorithm_v2 <> n:218 var
+binder 6628:6628 <> b:219
+R6665:6667 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R6647:6649 Coq.Vectors.Vector <> rev def
+R6656:6659 Coq.Vectors.VectorDef VectorNotations ::vector_scope:x_'::'_x not
+R6652:6653 Coq.Vectors.Vector <> hd def
+R6655:6655 TriDiag_algorithm_v2 <> b:219 var
+R6660:6661 Coq.Vectors.Vector <> tl def
+R6663:6663 TriDiag_algorithm_v2 <> b:219 var
+R6668:6668 TriDiag_algorithm_v2 <> b:219 var

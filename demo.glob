@@ -1,0 +1,1124 @@
+DIGEST cd61c24723c9d545c2709f4513952edf
+Fdemo
+R15:29 Coq.Reals.Reals <> <> lib
+R47:64 Coq.Vectors.Vector <> <> lib
+R74:88 Coq.Vectors.Vector VectorNotations <> mod
+R107:120 Coq.Init.Logic <> <> lib
+R138:159 Coq.Reals.Rdefinitions <> <> lib
+R177:191 Coq.Reals.RIneq <> <> lib
+def 207:212 <> vector
+R217:224 Coq.Vectors.Vector <> t ind
+rec 256:265 <> TriDiagSys
+proj 284:284 <> c
+proj 302:302 <> b
+proj 324:324 <> a
+proj 342:342 <> f
+R272:274 Coq.Init.Datatypes <> nat ind
+binder 268:268 <> n:1
+R288:293 demo <> vector def
+R295:295 Coq.Reals.Rdefinitions RbaseSymbolsImpl R defax
+R297:297 demo <> n:1 var
+R306:311 demo <> vector def
+R313:313 Coq.Reals.Rdefinitions RbaseSymbolsImpl R defax
+R316:316 Coq.Init.Datatypes <> S constr
+R318:318 demo <> n:1 var
+R328:333 demo <> vector def
+R335:335 Coq.Reals.Rdefinitions RbaseSymbolsImpl R defax
+R337:337 demo <> n:1 var
+R346:351 demo <> vector def
+R353:353 Coq.Reals.Rdefinitions RbaseSymbolsImpl R defax
+R356:356 Coq.Init.Datatypes <> S constr
+R358:358 demo <> n:1 var
+def 416:418 <> sub
+R427:427 Coq.Reals.Rdefinitions RbaseSymbolsImpl R defax
+binder 421:421 <> a:7
+binder 423:423 <> b:8
+R432:432 Coq.Reals.Rdefinitions RbaseSymbolsImpl R defax
+R437:442 Coq.Reals.Rdefinitions <> Rminus def
+R444:444 demo <> a:7 var
+R446:446 demo <> b:8 var
+def 478:480 <> mul
+R489:489 Coq.Reals.Rdefinitions RbaseSymbolsImpl R defax
+binder 483:483 <> a:9
+binder 485:485 <> b:10
+R494:494 Coq.Reals.Rdefinitions RbaseSymbolsImpl R defax
+R499:503 Coq.Reals.Rdefinitions RbaseSymbolsImpl Rmult defax
+R505:505 demo <> a:9 var
+R507:507 demo <> b:10 var
+def 543:545 <> div
+R554:554 Coq.Reals.Rdefinitions RbaseSymbolsImpl R defax
+binder 548:548 <> a:11
+binder 550:550 <> b:12
+R559:559 Coq.Reals.Rdefinitions RbaseSymbolsImpl R defax
+R564:567 Coq.Reals.Rdefinitions <> Rdiv def
+R569:569 demo <> a:11 var
+R571:571 demo <> b:12 var
+def 603:605 <> one
+R609:609 Coq.Reals.Rdefinitions RbaseSymbolsImpl R defax
+R614:615 Coq.Reals.Rdefinitions RbaseSymbolsImpl R1 defax
+def 690:693 <> zero
+R697:697 Coq.Reals.Rdefinitions RbaseSymbolsImpl R defax
+R702:703 Coq.Reals.Rdefinitions RbaseSymbolsImpl R0 defax
+def 771:773 <> add
+R782:782 Coq.Reals.Rdefinitions RbaseSymbolsImpl R defax
+binder 776:776 <> a:13
+binder 778:778 <> b:14
+R787:787 Coq.Reals.Rdefinitions RbaseSymbolsImpl R defax
+R792:796 Coq.Reals.Rdefinitions RbaseSymbolsImpl Rplus defax
+R798:798 demo <> a:13 var
+R800:800 demo <> b:14 var
+def 936:946 <> denominator
+R961:961 Coq.Reals.Rdefinitions RbaseSymbolsImpl R defax
+binder 949:949 <> a:15
+binder 951:955 <> alpha:16
+binder 957:957 <> b:17
+R966:966 Coq.Reals.Rdefinitions RbaseSymbolsImpl R defax
+R973:975 demo <> add def
+R978:980 demo <> mul def
+R982:982 demo <> a:15 var
+R984:988 demo <> alpha:16 var
+R991:991 demo <> b:17 var
+def 1105:1111 <> alpha_i
+R1128:1128 Coq.Reals.Rdefinitions RbaseSymbolsImpl R defax
+binder 1114:1114 <> c:18
+binder 1116:1116 <> a:19
+binder 1118:1122 <> alpha:20
+binder 1124:1124 <> b:21
+R1133:1133 Coq.Reals.Rdefinitions RbaseSymbolsImpl R defax
+R1140:1142 demo <> div def
+R1145:1147 demo <> sub def
+R1149:1152 demo <> zero def
+R1154:1154 demo <> c:18 var
+R1158:1168 demo <> denominator def
+R1170:1170 demo <> a:19 var
+R1172:1176 demo <> alpha:20 var
+R1178:1178 demo <> b:21 var
+def 1278:1284 <> alpha_1
+R1293:1293 Coq.Reals.Rdefinitions RbaseSymbolsImpl R defax
+binder 1287:1287 <> c:22
+binder 1289:1289 <> b:23
+R1298:1298 Coq.Reals.Rdefinitions RbaseSymbolsImpl R defax
+R1305:1307 demo <> div def
+R1310:1312 demo <> sub def
+R1314:1317 demo <> zero def
+R1319:1319 demo <> c:22 var
+R1322:1322 demo <> b:23 var
+def 1451:1456 <> beta_i
+R1478:1478 Coq.Reals.Rdefinitions RbaseSymbolsImpl R defax
+binder 1459:1459 <> a:24
+binder 1461:1461 <> b:25
+binder 1463:1463 <> f:26
+binder 1465:1469 <> alpha:27
+binder 1471:1474 <> beta:28
+R1483:1483 Coq.Reals.Rdefinitions RbaseSymbolsImpl R defax
+R1490:1492 demo <> div def
+R1495:1497 demo <> sub def
+R1499:1499 demo <> f:26 var
+R1502:1504 demo <> mul def
+R1506:1506 demo <> a:24 var
+R1508:1511 demo <> beta:28 var
+R1516:1526 demo <> denominator def
+R1528:1528 demo <> a:24 var
+R1530:1534 demo <> alpha:27 var
+R1536:1536 demo <> b:25 var
+def 1635:1640 <> beta_1
+R1649:1649 Coq.Reals.Rdefinitions RbaseSymbolsImpl R defax
+binder 1643:1643 <> f:29
+binder 1645:1645 <> b:30
+R1654:1654 Coq.Reals.Rdefinitions RbaseSymbolsImpl R defax
+R1661:1663 demo <> div def
+R1665:1665 demo <> f:29 var
+R1667:1667 demo <> b:30 var
+def 1746:1748 <> x_j
+R1766:1766 Coq.Reals.Rdefinitions RbaseSymbolsImpl R defax
+binder 1751:1751 <> x:31
+binder 1753:1757 <> alpha:32
+binder 1759:1762 <> beta:33
+R1771:1771 Coq.Reals.Rdefinitions RbaseSymbolsImpl R defax
+R1778:1780 demo <> add def
+R1783:1785 demo <> mul def
+R1787:1791 demo <> alpha:32 var
+R1793:1793 demo <> x:31 var
+R1796:1799 demo <> beta:33 var
+def 1873:1875 <> x_n
+R1898:1898 Coq.Reals.Rdefinitions RbaseSymbolsImpl R defax
+binder 1878:1878 <> a:34
+binder 1880:1880 <> b:35
+binder 1882:1882 <> f:36
+binder 1884:1888 <> alpha:37
+binder 1890:1893 <> beta:38
+R1903:1903 Coq.Reals.Rdefinitions RbaseSymbolsImpl R defax
+R1910:1912 demo <> div def
+R1915:1917 demo <> sub def
+R1919:1919 demo <> f:36 var
+R1922:1924 demo <> mul def
+R1926:1926 demo <> a:34 var
+R1928:1931 demo <> beta:38 var
+R1936:1938 demo <> add def
+R1940:1940 demo <> b:35 var
+R1943:1945 demo <> mul def
+R1947:1947 demo <> a:34 var
+R1949:1953 demo <> alpha:37 var
+def 1968:1975 <> mkVector
+R1982:1984 Coq.Init.Datatypes <> nat ind
+binder 1978:1978 <> n:39
+R1996:1996 Coq.Reals.Rdefinitions RbaseSymbolsImpl R defax
+binder 1988:1992 <> value:40
+R2001:2008 Coq.Vectors.Vector <> t ind
+R2010:2010 Coq.Reals.Rdefinitions RbaseSymbolsImpl R defax
+R2012:2012 demo <> n:39 var
+R2023:2023 demo <> n:39 var
+R2032:2032 Coq.Init.Datatypes <> O constr
+R2037:2046 Coq.Vectors.Vector <> nil constr
+R2048:2048 Coq.Reals.Rdefinitions RbaseSymbolsImpl R defax
+R2052:2052 Coq.Init.Datatypes <> S constr
+R2064:2068 Coq.Vectors.VectorDef VectorNotations ::vector_scope:x_'::'_x not
+R2085:2085 Coq.Vectors.VectorDef VectorNotations ::vector_scope:x_'::'_x not
+R2059:2063 demo <> value:40 var
+R2069:2076 demo <> mkVector:41 def
+R2080:2084 demo <> value:40 var
+def 2107:2117 <> matrix_mul'
+R2124:2126 Coq.Init.Datatypes <> nat ind
+binder 2120:2120 <> n:43
+R2138:2143 demo <> vector def
+R2145:2145 Coq.Reals.Rdefinitions RbaseSymbolsImpl R defax
+R2148:2148 Coq.Init.Datatypes <> S constr
+R2150:2150 demo <> n:43 var
+binder 2130:2130 <> a:44
+binder 2132:2132 <> b:45
+binder 2134:2134 <> x:46
+R2159:2164 demo <> vector def
+R2166:2166 Coq.Reals.Rdefinitions RbaseSymbolsImpl R defax
+R2168:2168 demo <> n:43 var
+binder 2155:2155 <> c:47
+R2178:2178 Coq.Reals.Rdefinitions RbaseSymbolsImpl R defax
+binder 2172:2174 <> x_i:48
+R2183:2188 demo <> vector def
+R2190:2190 Coq.Reals.Rdefinitions RbaseSymbolsImpl R defax
+R2193:2193 Coq.Init.Datatypes <> S constr
+R2195:2195 demo <> n:43 var
+R2209:2209 demo <> n:43 var
+R2232:2235 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2218:2223 demo <> vector def
+R2225:2225 Coq.Reals.Rdefinitions RbaseSymbolsImpl R defax
+R2228:2228 Coq.Init.Datatypes <> S constr
+R2230:2230 demo <> n:50 var
+R2250:2253 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2236:2241 demo <> vector def
+R2243:2243 Coq.Reals.Rdefinitions RbaseSymbolsImpl R defax
+R2246:2246 Coq.Init.Datatypes <> S constr
+R2248:2248 demo <> n:50 var
+R2268:2271 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2254:2259 demo <> vector def
+R2261:2261 Coq.Reals.Rdefinitions RbaseSymbolsImpl R defax
+R2264:2264 Coq.Init.Datatypes <> S constr
+R2266:2266 demo <> n:50 var
+R2282:2285 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2272:2277 demo <> vector def
+R2279:2279 Coq.Reals.Rdefinitions RbaseSymbolsImpl R defax
+R2281:2281 demo <> n:50 var
+R2286:2291 demo <> vector def
+R2293:2293 Coq.Reals.Rdefinitions RbaseSymbolsImpl R defax
+R2296:2296 Coq.Init.Datatypes <> S constr
+R2298:2298 demo <> n:50 var
+binder 2319:2319 <> a:51
+binder 2321:2321 <> b:52
+binder 2323:2323 <> x:53
+binder 2325:2325 <> c:54
+R2345:2346 Coq.Vectors.Vector <> hd def
+R2348:2348 demo <> a:51 var
+binder 2338:2340 <> a_1:55
+R2368:2369 Coq.Vectors.Vector <> hd def
+R2371:2371 demo <> b:52 var
+binder 2361:2363 <> b_1:56
+R2391:2392 Coq.Vectors.Vector <> hd def
+R2394:2394 demo <> x:53 var
+binder 2384:2386 <> x_1:57
+R2414:2416 demo <> add def
+R2419:2421 demo <> mul def
+R2423:2425 demo <> a_1:55 var
+R2427:2429 demo <> x_i:48 var
+R2433:2435 demo <> mul def
+R2437:2439 demo <> b_1:56 var
+R2441:2443 demo <> x_1:57 var
+binder 2407:2409 <> f_n:58
+R2453:2453 Coq.Vectors.VectorDef VectorNotations ::vector_scope:'['_x_']' not
+R2457:2457 Coq.Vectors.VectorDef VectorNotations ::vector_scope:'['_x_']' not
+R2454:2456 demo <> f_n:58 var
+R2463:2463 Coq.Init.Datatypes <> S constr
+binder 2474:2474 <> a:59
+binder 2476:2476 <> b:60
+binder 2478:2478 <> x:61
+binder 2480:2480 <> c:62
+R2500:2501 Coq.Vectors.Vector <> hd def
+R2503:2503 demo <> a:59 var
+binder 2493:2495 <> a_1:63
+R2523:2524 Coq.Vectors.Vector <> tl def
+R2526:2526 demo <> a:59 var
+binder 2516:2518 <> tla:64
+R2546:2547 Coq.Vectors.Vector <> hd def
+R2549:2549 demo <> b:60 var
+binder 2539:2541 <> b_1:65
+R2569:2570 Coq.Vectors.Vector <> tl def
+R2572:2572 demo <> b:60 var
+binder 2562:2564 <> tlb:66
+R2592:2593 Coq.Vectors.Vector <> hd def
+R2595:2595 demo <> c:62 var
+binder 2585:2587 <> c_1:67
+R2615:2616 Coq.Vectors.Vector <> tl def
+R2618:2618 demo <> c:62 var
+binder 2608:2610 <> tlc:68
+R2638:2639 Coq.Vectors.Vector <> hd def
+R2641:2641 demo <> x:61 var
+binder 2631:2633 <> x_1:69
+R2661:2662 Coq.Vectors.Vector <> tl def
+R2664:2664 demo <> x:61 var
+binder 2654:2656 <> tlx:70
+R2684:2685 Coq.Vectors.Vector <> hd def
+R2687:2689 demo <> tlx:70 var
+binder 2677:2679 <> x_2:71
+R2709:2711 demo <> mul def
+R2713:2715 demo <> a_1:63 var
+R2717:2719 demo <> x_i:48 var
+binder 2702:2704 <> f_1:72
+R2739:2741 demo <> mul def
+R2743:2745 demo <> b_1:65 var
+R2747:2749 demo <> x_1:69 var
+binder 2732:2734 <> f_2:73
+R2769:2771 demo <> mul def
+R2773:2775 demo <> c_1:67 var
+R2777:2779 demo <> x_2:71 var
+binder 2762:2764 <> f_3:74
+R2797:2799 demo <> add def
+R2801:2803 demo <> f_1:72 var
+R2806:2808 demo <> add def
+R2810:2812 demo <> f_2:73 var
+R2814:2816 demo <> f_3:74 var
+binder 2792:2792 <> f:75
+R2827:2831 Coq.Vectors.VectorDef VectorNotations ::vector_scope:x_'::'_x not
+R2865:2865 Coq.Vectors.VectorDef VectorNotations ::vector_scope:x_'::'_x not
+R2826:2826 demo <> f:75 var
+R2832:2842 demo <> matrix_mul':49 def
+R2862:2864 demo <> x_1:69 var
+R2858:2860 demo <> tlc:68 var
+R2854:2856 demo <> tlx:70 var
+R2850:2852 demo <> tlb:66 var
+R2846:2848 demo <> tla:64 var
+R2873:2873 demo <> a:44 var
+R2875:2875 demo <> b:45 var
+R2877:2877 demo <> x:46 var
+R2879:2879 demo <> c:47 var
+def 2895:2904 <> matrix_mul
+R2911:2913 Coq.Init.Datatypes <> nat ind
+binder 2907:2907 <> n:76
+R2923:2932 demo <> TriDiagSys rec
+R2934:2934 demo <> n:76 var
+binder 2917:2919 <> SLE:77
+R2942:2947 demo <> vector def
+R2949:2949 Coq.Reals.Rdefinitions RbaseSymbolsImpl R defax
+R2952:2952 Coq.Init.Datatypes <> S constr
+R2954:2954 demo <> n:76 var
+binder 2938:2938 <> x:78
+R2960:2965 demo <> vector def
+R2967:2967 Coq.Reals.Rdefinitions RbaseSymbolsImpl R defax
+R2970:2970 Coq.Init.Datatypes <> S constr
+R2972:2972 demo <> n:76 var
+R2986:2986 demo <> n:76 var
+R3007:3010 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2995:3004 demo <> TriDiagSys rec
+R3006:3006 demo <> n:79 var
+R3025:3028 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R3011:3016 demo <> vector def
+R3018:3018 Coq.Reals.Rdefinitions RbaseSymbolsImpl R defax
+R3021:3021 Coq.Init.Datatypes <> S constr
+R3023:3023 demo <> n:79 var
+R3029:3034 demo <> vector def
+R3036:3036 Coq.Reals.Rdefinitions RbaseSymbolsImpl R defax
+R3039:3039 Coq.Init.Datatypes <> S constr
+R3041:3041 demo <> n:79 var
+binder 3062:3064 <> SLE:80
+binder 3066:3066 <> x:81
+R3086:3087 Coq.Vectors.Vector <> hd def
+R3090:3090 demo <> b proj
+R3094:3096 demo <> SLE:80 var
+binder 3079:3081 <> b_1:82
+R3117:3118 Coq.Vectors.Vector <> hd def
+R3120:3120 demo <> x:81 var
+binder 3110:3112 <> x_1:83
+R3140:3142 demo <> mul def
+R3144:3146 demo <> b_1:82 var
+R3148:3150 demo <> x_1:83 var
+binder 3133:3135 <> f_1:84
+R3159:3159 Coq.Vectors.VectorDef VectorNotations ::vector_scope:'['_x_']' not
+R3163:3163 Coq.Vectors.VectorDef VectorNotations ::vector_scope:'['_x_']' not
+R3160:3162 demo <> f_1:84 var
+R3169:3169 Coq.Init.Datatypes <> S constr
+binder 3180:3182 <> SLE:85
+binder 3184:3184 <> x:86
+R3204:3205 Coq.Vectors.Vector <> hd def
+R3208:3208 demo <> b proj
+R3212:3214 demo <> SLE:85 var
+binder 3197:3199 <> b_1:87
+R3235:3236 Coq.Vectors.Vector <> tl def
+R3239:3239 demo <> b proj
+R3243:3245 demo <> SLE:85 var
+binder 3228:3230 <> tlb:88
+R3266:3267 Coq.Vectors.Vector <> hd def
+R3270:3270 demo <> c proj
+R3274:3276 demo <> SLE:85 var
+binder 3259:3261 <> c_1:89
+R3297:3298 Coq.Vectors.Vector <> tl def
+R3301:3301 demo <> c proj
+R3305:3307 demo <> SLE:85 var
+binder 3290:3292 <> tlc:90
+R3328:3329 Coq.Vectors.Vector <> hd def
+R3331:3331 demo <> x:86 var
+binder 3321:3323 <> x_1:91
+R3351:3352 Coq.Vectors.Vector <> tl def
+R3354:3354 demo <> x:86 var
+binder 3344:3346 <> tlx:92
+R3374:3375 Coq.Vectors.Vector <> hd def
+R3377:3379 demo <> tlx:92 var
+binder 3367:3369 <> x_2:93
+R3399:3401 demo <> add def
+R3404:3406 demo <> mul def
+R3408:3410 demo <> b_1:87 var
+R3412:3414 demo <> x_1:91 var
+R3418:3420 demo <> mul def
+R3422:3424 demo <> c_1:89 var
+R3426:3428 demo <> x_2:93 var
+binder 3392:3394 <> f_1:94
+R3441:3445 Coq.Vectors.VectorDef VectorNotations ::vector_scope:x_'::'_x not
+R3485:3485 Coq.Vectors.VectorDef VectorNotations ::vector_scope:x_'::'_x not
+R3438:3440 demo <> f_1:94 var
+R3446:3456 demo <> matrix_mul' def
+R3461:3461 demo <> a proj
+R3465:3467 demo <> SLE:85 var
+R3470:3472 demo <> tlb:88 var
+R3474:3476 demo <> tlx:92 var
+R3478:3480 demo <> tlc:90 var
+R3482:3484 demo <> x_1:91 var
+R3493:3495 demo <> SLE:77 var
+R3497:3497 demo <> x:78 var
+def 3512:3522 <> find_alpha'
+R3529:3531 Coq.Init.Datatypes <> nat ind
+binder 3525:3525 <> n:95
+R3539:3544 demo <> vector def
+R3546:3546 Coq.Reals.Rdefinitions RbaseSymbolsImpl R defax
+R3549:3549 Coq.Init.Datatypes <> S constr
+R3551:3551 demo <> n:95 var
+binder 3535:3535 <> b:96
+R3562:3567 demo <> vector def
+R3569:3569 Coq.Reals.Rdefinitions RbaseSymbolsImpl R defax
+R3571:3571 demo <> n:95 var
+binder 3556:3556 <> a:97
+binder 3558:3558 <> c:98
+R3583:3583 Coq.Reals.Rdefinitions RbaseSymbolsImpl R defax
+binder 3575:3579 <> alpha:99
+R3588:3593 demo <> vector def
+R3595:3595 Coq.Reals.Rdefinitions RbaseSymbolsImpl R defax
+R3597:3597 demo <> n:95 var
+R3610:3610 demo <> n:95 var
+R3633:3636 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R3619:3624 demo <> vector def
+R3626:3626 Coq.Reals.Rdefinitions RbaseSymbolsImpl R defax
+R3629:3629 Coq.Init.Datatypes <> S constr
+R3631:3631 demo <> n:101 var
+R3647:3650 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R3637:3642 demo <> vector def
+R3644:3644 Coq.Reals.Rdefinitions RbaseSymbolsImpl R defax
+R3646:3646 demo <> n:101 var
+R3661:3664 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R3651:3656 demo <> vector def
+R3658:3658 Coq.Reals.Rdefinitions RbaseSymbolsImpl R defax
+R3660:3660 demo <> n:101 var
+R3665:3670 demo <> vector def
+R3672:3672 Coq.Reals.Rdefinitions RbaseSymbolsImpl R defax
+R3674:3674 demo <> n:101 var
+R3685:3685 Coq.Init.Datatypes <> O constr
+R3703:3704 Coq.Vectors.VectorDef VectorNotations ::vector_scope:'['_']' not
+R3710:3710 Coq.Init.Datatypes <> S constr
+binder 3721:3721 <> b:102
+binder 3723:3723 <> a:103
+binder 3725:3725 <> c:104
+R3745:3746 Coq.Vectors.Vector <> hd def
+R3748:3748 demo <> b:102 var
+binder 3738:3740 <> b_1:105
+R3768:3769 Coq.Vectors.Vector <> tl def
+R3771:3771 demo <> b:102 var
+binder 3761:3763 <> tlb:106
+R3791:3792 Coq.Vectors.Vector <> hd def
+R3794:3794 demo <> a:103 var
+binder 3784:3786 <> a_1:107
+R3814:3815 Coq.Vectors.Vector <> tl def
+R3817:3817 demo <> a:103 var
+binder 3807:3809 <> tla:108
+R3837:3838 Coq.Vectors.Vector <> hd def
+R3840:3840 demo <> c:104 var
+binder 3830:3832 <> c_1:109
+R3860:3861 Coq.Vectors.Vector <> tl def
+R3863:3863 demo <> c:104 var
+binder 3853:3855 <> tlc:110
+R3887:3893 demo <> alpha_i def
+R3895:3897 demo <> c_1:109 var
+R3899:3901 demo <> a_1:107 var
+R3903:3907 demo <> alpha:99 var
+R3909:3911 demo <> b_1:105 var
+binder 3876:3882 <> alpha_i:111
+R3927:3931 Coq.Vectors.VectorDef VectorNotations ::vector_scope:x_'::'_x not
+R3965:3965 Coq.Vectors.VectorDef VectorNotations ::vector_scope:x_'::'_x not
+R3920:3926 demo <> alpha_i:111 var
+R3932:3942 demo <> find_alpha':100 def
+R3958:3964 demo <> alpha_i:111 var
+R3954:3956 demo <> tlc:110 var
+R3950:3952 demo <> tla:108 var
+R3946:3948 demo <> tlb:106 var
+R3974:3974 demo <> b:96 var
+R3976:3976 demo <> a:97 var
+R3978:3978 demo <> c:98 var
+def 3995:4004 <> find_alpha
+R4011:4013 Coq.Init.Datatypes <> nat ind
+binder 4007:4007 <> n:112
+R4023:4032 demo <> TriDiagSys rec
+R4034:4034 demo <> n:112 var
+binder 4017:4019 <> SLE:113
+R4039:4044 demo <> vector def
+R4046:4046 Coq.Reals.Rdefinitions RbaseSymbolsImpl R defax
+R4049:4049 Coq.Init.Datatypes <> S constr
+R4051:4051 demo <> n:112 var
+R4065:4065 demo <> n:112 var
+R4086:4089 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R4074:4083 demo <> TriDiagSys rec
+R4085:4085 demo <> n:114 var
+R4090:4095 demo <> vector def
+R4097:4097 Coq.Reals.Rdefinitions RbaseSymbolsImpl R defax
+R4100:4100 Coq.Init.Datatypes <> S constr
+R4102:4102 demo <> n:114 var
+R4114:4114 Coq.Init.Datatypes <> O constr
+R4128:4128 Coq.Vectors.VectorDef VectorNotations ::vector_scope:'['_x_']' not
+R4132:4132 Coq.Vectors.VectorDef VectorNotations ::vector_scope:'['_x_']' not
+R4280:4280 Coq.Init.Datatypes <> S constr
+binder 4291:4293 <> SLE:115
+R4313:4314 Coq.Vectors.Vector <> hd def
+R4317:4317 demo <> c proj
+R4321:4323 demo <> SLE:115 var
+binder 4306:4308 <> c_1:116
+R4344:4345 Coq.Vectors.Vector <> hd def
+R4348:4348 demo <> b proj
+R4352:4354 demo <> SLE:115 var
+binder 4337:4339 <> b_1:117
+R4379:4385 demo <> alpha_1 def
+R4387:4389 demo <> c_1:116 var
+R4391:4393 demo <> b_1:117 var
+binder 4368:4374 <> alpha_1:118
+R4409:4413 Coq.Vectors.VectorDef VectorNotations ::vector_scope:x_'::'_x not
+R4469:4469 Coq.Vectors.VectorDef VectorNotations ::vector_scope:x_'::'_x not
+R4402:4408 demo <> alpha_1:118 var
+R4414:4424 demo <> find_alpha' def
+R4427:4427 Coq.Init.Datatypes <> S constr
+R4433:4433 demo <> b proj
+R4437:4439 demo <> SLE:115 var
+R4443:4443 demo <> c proj
+R4447:4449 demo <> SLE:115 var
+R4453:4453 demo <> a proj
+R4457:4459 demo <> SLE:115 var
+R4462:4468 demo <> alpha_1:118 var
+R4628:4630 demo <> SLE:113 var
+def 4647:4656 <> find_beta'
+R4663:4665 Coq.Init.Datatypes <> nat ind
+binder 4659:4659 <> n:119
+R4680:4685 demo <> vector def
+R4687:4687 Coq.Reals.Rdefinitions RbaseSymbolsImpl R defax
+R4690:4690 Coq.Init.Datatypes <> S constr
+R4692:4692 demo <> n:119 var
+binder 4669:4669 <> b:120
+binder 4671:4671 <> f:121
+binder 4673:4677 <> alpha:122
+R4701:4706 demo <> vector def
+R4708:4708 Coq.Reals.Rdefinitions RbaseSymbolsImpl R defax
+R4710:4710 demo <> n:119 var
+binder 4697:4697 <> a:123
+R4721:4721 Coq.Reals.Rdefinitions RbaseSymbolsImpl R defax
+binder 4714:4717 <> beta:124
+R4726:4731 demo <> vector def
+R4733:4733 Coq.Reals.Rdefinitions RbaseSymbolsImpl R defax
+R4735:4735 demo <> n:119 var
+R4748:4748 demo <> n:119 var
+R4771:4774 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R4757:4762 demo <> vector def
+R4764:4764 Coq.Reals.Rdefinitions RbaseSymbolsImpl R defax
+R4767:4767 Coq.Init.Datatypes <> S constr
+R4769:4769 demo <> n:126 var
+R4789:4792 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R4775:4780 demo <> vector def
+R4782:4782 Coq.Reals.Rdefinitions RbaseSymbolsImpl R defax
+R4785:4785 Coq.Init.Datatypes <> S constr
+R4787:4787 demo <> n:126 var
+R4807:4810 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R4793:4798 demo <> vector def
+R4800:4800 Coq.Reals.Rdefinitions RbaseSymbolsImpl R defax
+R4803:4803 Coq.Init.Datatypes <> S constr
+R4805:4805 demo <> n:126 var
+R4821:4824 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R4811:4816 demo <> vector def
+R4818:4818 Coq.Reals.Rdefinitions RbaseSymbolsImpl R defax
+R4820:4820 demo <> n:126 var
+R4825:4830 demo <> vector def
+R4832:4832 Coq.Reals.Rdefinitions RbaseSymbolsImpl R defax
+R4834:4834 demo <> n:126 var
+R4845:4845 Coq.Init.Datatypes <> O constr
+R4865:4866 Coq.Vectors.VectorDef VectorNotations ::vector_scope:'['_']' not
+R4872:4872 Coq.Init.Datatypes <> S constr
+binder 4883:4883 <> b:127
+binder 4885:4885 <> f:128
+binder 4887:4891 <> alpha:129
+binder 4893:4893 <> a:130
+R4913:4914 Coq.Vectors.Vector <> hd def
+R4916:4916 demo <> a:130 var
+binder 4906:4908 <> a_1:131
+R4936:4937 Coq.Vectors.Vector <> tl def
+R4939:4939 demo <> a:130 var
+binder 4929:4931 <> tla:132
+R4959:4960 Coq.Vectors.Vector <> hd def
+R4962:4962 demo <> b:127 var
+binder 4952:4954 <> b_1:133
+R4982:4983 Coq.Vectors.Vector <> tl def
+R4985:4985 demo <> b:127 var
+binder 4975:4977 <> tlb:134
+R5005:5006 Coq.Vectors.Vector <> hd def
+R5008:5008 demo <> f:128 var
+binder 4998:5000 <> f_1:135
+R5028:5029 Coq.Vectors.Vector <> tl def
+R5031:5031 demo <> f:128 var
+binder 5021:5023 <> tlf:136
+R5056:5057 Coq.Vectors.Vector <> hd def
+R5059:5063 demo <> alpha:129 var
+binder 5044:5051 <> hd_alpha:137
+R5088:5089 Coq.Vectors.Vector <> tl def
+R5091:5095 demo <> alpha:129 var
+binder 5076:5083 <> tl_alpha:138
+R5118:5123 demo <> beta_i def
+R5125:5127 demo <> a_1:131 var
+R5129:5131 demo <> b_1:133 var
+R5133:5135 demo <> f_1:135 var
+R5137:5144 demo <> hd_alpha:137 var
+R5146:5149 demo <> beta:124 var
+binder 5108:5113 <> beta_i:139
+R5164:5168 Coq.Vectors.VectorDef VectorNotations ::vector_scope:x_'::'_x not
+R5209:5209 Coq.Vectors.VectorDef VectorNotations ::vector_scope:x_'::'_x not
+R5158:5163 demo <> beta_i:139 var
+R5169:5178 demo <> find_beta':125 def
+R5203:5208 demo <> beta_i:139 var
+R5199:5201 demo <> tla:132 var
+R5190:5197 demo <> tl_alpha:138 var
+R5186:5188 demo <> tlf:136 var
+R5182:5184 demo <> tlb:134 var
+R5215:5215 demo <> b:120 var
+R5217:5217 demo <> f:121 var
+R5219:5223 demo <> alpha:122 var
+R5225:5225 demo <> a:123 var
+def 5242:5250 <> find_beta
+R5257:5259 Coq.Init.Datatypes <> nat ind
+binder 5253:5253 <> n:140
+R5269:5278 demo <> TriDiagSys rec
+R5280:5280 demo <> n:140 var
+binder 5263:5265 <> SLE:141
+R5292:5297 demo <> vector def
+R5299:5299 Coq.Reals.Rdefinitions RbaseSymbolsImpl R defax
+R5302:5302 Coq.Init.Datatypes <> S constr
+R5304:5304 demo <> n:140 var
+binder 5284:5288 <> alpha:142
+R5310:5315 demo <> vector def
+R5317:5317 Coq.Reals.Rdefinitions RbaseSymbolsImpl R defax
+R5320:5320 Coq.Init.Datatypes <> S constr
+R5322:5322 demo <> n:140 var
+R5336:5336 demo <> n:140 var
+R5357:5360 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R5345:5354 demo <> TriDiagSys rec
+R5356:5356 demo <> n:143 var
+R5375:5378 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R5361:5366 demo <> vector def
+R5368:5368 Coq.Reals.Rdefinitions RbaseSymbolsImpl R defax
+R5371:5371 Coq.Init.Datatypes <> S constr
+R5373:5373 demo <> n:143 var
+R5379:5384 demo <> vector def
+R5386:5386 Coq.Reals.Rdefinitions RbaseSymbolsImpl R defax
+R5389:5389 Coq.Init.Datatypes <> S constr
+R5391:5391 demo <> n:143 var
+R5403:5403 Coq.Init.Datatypes <> O constr
+R5419:5419 Coq.Vectors.VectorDef VectorNotations ::vector_scope:'['_x_']' not
+R5423:5423 Coq.Vectors.VectorDef VectorNotations ::vector_scope:'['_x_']' not
+R5571:5571 Coq.Init.Datatypes <> S constr
+binder 5582:5584 <> SLE:144
+binder 5586:5590 <> alpha:145
+R5610:5611 Coq.Vectors.Vector <> hd def
+R5614:5614 demo <> b proj
+R5618:5620 demo <> SLE:144 var
+binder 5603:5605 <> b_1:146
+R5641:5642 Coq.Vectors.Vector <> hd def
+R5645:5645 demo <> f proj
+R5649:5651 demo <> SLE:144 var
+binder 5634:5636 <> f_1:147
+R5675:5680 demo <> beta_1 def
+R5682:5684 demo <> f_1:147 var
+R5686:5688 demo <> b_1:146 var
+binder 5665:5670 <> beta_1:148
+R5703:5707 Coq.Vectors.VectorDef VectorNotations ::vector_scope:x_'::'_x not
+R5767:5767 Coq.Vectors.VectorDef VectorNotations ::vector_scope:x_'::'_x not
+R5697:5702 demo <> beta_1:148 var
+R5708:5717 demo <> find_beta' def
+R5720:5720 Coq.Init.Datatypes <> S constr
+R5726:5726 demo <> b proj
+R5730:5732 demo <> SLE:144 var
+R5736:5736 demo <> f proj
+R5740:5742 demo <> SLE:144 var
+R5745:5749 demo <> alpha:145 var
+R5752:5752 demo <> a proj
+R5756:5758 demo <> SLE:144 var
+R5761:5766 demo <> beta_1:148 var
+R5775:5777 demo <> SLE:141 var
+R5779:5783 demo <> alpha:142 var
+def 5801:5807 <> find_x'
+R5814:5816 Coq.Init.Datatypes <> nat ind
+binder 5810:5810 <> n:149
+R5833:5838 demo <> vector def
+R5840:5840 Coq.Reals.Rdefinitions RbaseSymbolsImpl R defax
+R5843:5843 Coq.Init.Datatypes <> S constr
+R5845:5845 demo <> n:149 var
+binder 5820:5824 <> alpha:150
+binder 5826:5829 <> beta:151
+R5854:5854 Coq.Reals.Rdefinitions RbaseSymbolsImpl R defax
+binder 5850:5850 <> x:152
+R5859:5864 demo <> vector def
+R5866:5866 Coq.Reals.Rdefinitions RbaseSymbolsImpl R defax
+R5869:5869 demo <> n:149 var
+R5883:5883 demo <> n:149 var
+R5906:5909 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R5892:5897 demo <> vector def
+R5899:5899 Coq.Reals.Rdefinitions RbaseSymbolsImpl R defax
+R5902:5902 Coq.Init.Datatypes <> S constr
+R5904:5904 demo <> n:154 var
+R5924:5927 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R5910:5915 demo <> vector def
+R5917:5917 Coq.Reals.Rdefinitions RbaseSymbolsImpl R defax
+R5920:5920 Coq.Init.Datatypes <> S constr
+R5922:5922 demo <> n:154 var
+R5928:5933 demo <> vector def
+R5935:5935 Coq.Reals.Rdefinitions RbaseSymbolsImpl R defax
+R5937:5937 demo <> n:154 var
+R5948:5948 Coq.Init.Datatypes <> O constr
+R5964:5965 Coq.Vectors.VectorDef VectorNotations ::vector_scope:'['_']' not
+R5971:5971 Coq.Init.Datatypes <> S constr
+binder 5982:5986 <> alpha:155
+binder 5988:5991 <> beta:156
+R6016:6017 Coq.Vectors.Vector <> hd def
+R6019:6023 demo <> alpha:155 var
+binder 6004:6011 <> hd_alpha:157
+R6048:6049 Coq.Vectors.Vector <> tl def
+R6051:6055 demo <> alpha:155 var
+binder 6036:6043 <> tl_alpha:158
+R6079:6080 Coq.Vectors.Vector <> hd def
+R6082:6085 demo <> beta:156 var
+binder 6068:6074 <> hd_beta:159
+R6109:6110 Coq.Vectors.Vector <> tl def
+R6112:6115 demo <> beta:156 var
+binder 6098:6104 <> tl_beta:160
+R6135:6137 demo <> x_j def
+R6139:6139 demo <> x:152 var
+R6141:6148 demo <> hd_alpha:157 var
+R6150:6156 demo <> hd_beta:159 var
+binder 6128:6130 <> x_j:161
+R6168:6172 Coq.Vectors.VectorDef VectorNotations ::vector_scope:x_'::'_x not
+R6203:6203 Coq.Vectors.VectorDef VectorNotations ::vector_scope:x_'::'_x not
+R6165:6167 demo <> x_j:161 var
+R6173:6179 demo <> find_x':153 def
+R6200:6202 demo <> x_j:161 var
+R6192:6198 demo <> tl_beta:160 var
+R6183:6190 demo <> tl_alpha:158 var
+R6211:6215 demo <> alpha:150 var
+R6217:6220 demo <> beta:151 var
+def 6238:6243 <> find_x
+R6250:6252 Coq.Init.Datatypes <> nat ind
+binder 6246:6246 <> n:162
+R6262:6271 demo <> TriDiagSys rec
+R6273:6273 demo <> n:162 var
+binder 6256:6258 <> SLE:163
+R6290:6295 demo <> vector def
+R6297:6297 Coq.Reals.Rdefinitions RbaseSymbolsImpl R defax
+R6300:6300 Coq.Init.Datatypes <> S constr
+R6302:6302 demo <> n:162 var
+binder 6277:6281 <> alpha:164
+binder 6283:6286 <> beta:165
+R6308:6313 demo <> vector def
+R6315:6315 Coq.Reals.Rdefinitions RbaseSymbolsImpl R defax
+R6318:6318 Coq.Init.Datatypes <> S constr
+R6320:6320 demo <> n:162 var
+R6332:6332 demo <> n:162 var
+R6353:6356 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R6341:6350 demo <> TriDiagSys rec
+R6352:6352 demo <> n:166 var
+R6371:6374 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R6357:6362 demo <> vector def
+R6364:6364 Coq.Reals.Rdefinitions RbaseSymbolsImpl R defax
+R6367:6367 Coq.Init.Datatypes <> S constr
+R6369:6369 demo <> n:166 var
+R6389:6392 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R6375:6380 demo <> vector def
+R6382:6382 Coq.Reals.Rdefinitions RbaseSymbolsImpl R defax
+R6385:6385 Coq.Init.Datatypes <> S constr
+R6387:6387 demo <> n:166 var
+R6393:6398 demo <> vector def
+R6400:6400 Coq.Reals.Rdefinitions RbaseSymbolsImpl R defax
+R6403:6403 Coq.Init.Datatypes <> S constr
+R6405:6405 demo <> n:166 var
+R6417:6417 Coq.Init.Datatypes <> O constr
+R6435:6435 Coq.Vectors.VectorDef VectorNotations ::vector_scope:'['_x_']' not
+R6439:6439 Coq.Vectors.VectorDef VectorNotations ::vector_scope:'['_x_']' not
+R6587:6587 Coq.Init.Datatypes <> S constr
+binder 6598:6600 <> SLE:167
+binder 6602:6606 <> alpha:168
+binder 6608:6611 <> beta:169
+R6630:6632 Coq.Vectors.Vector <> rev def
+R6635:6635 demo <> a proj
+R6639:6641 demo <> SLE:167 var
+binder 6624:6625 <> a':170
+R6661:6663 Coq.Vectors.Vector <> rev def
+R6666:6666 demo <> b proj
+R6670:6672 demo <> SLE:167 var
+binder 6655:6656 <> b':171
+R6692:6694 Coq.Vectors.Vector <> rev def
+R6697:6697 demo <> f proj
+R6701:6703 demo <> SLE:167 var
+binder 6686:6687 <> f':172
+R6727:6729 Coq.Vectors.Vector <> rev def
+R6732:6736 demo <> alpha:168 var
+binder 6717:6722 <> alpha':173
+R6759:6761 Coq.Vectors.Vector <> rev def
+R6764:6767 demo <> beta:169 var
+binder 6750:6754 <> beta':174
+R6788:6789 Coq.Vectors.Vector <> hd def
+R6791:6792 demo <> a':170 var
+binder 6781:6783 <> a_n:175
+R6812:6813 Coq.Vectors.Vector <> hd def
+R6815:6816 demo <> b':171 var
+binder 6805:6807 <> b_n:176
+R6836:6837 Coq.Vectors.Vector <> hd def
+R6839:6840 demo <> f':172 var
+binder 6829:6831 <> f_n:177
+R6864:6865 Coq.Vectors.Vector <> hd def
+R6867:6872 demo <> alpha':173 var
+binder 6853:6859 <> alpha_n:178
+R6895:6896 Coq.Vectors.Vector <> hd def
+R6898:6902 demo <> beta':174 var
+binder 6885:6890 <> beta_n:179
+R6922:6924 demo <> x_n def
+R6926:6928 demo <> a_n:175 var
+R6930:6932 demo <> b_n:176 var
+R6934:6936 demo <> f_n:177 var
+R6938:6944 demo <> alpha_n:178 var
+R6946:6951 demo <> beta_n:179 var
+binder 6915:6917 <> x_n:180
+R6960:6962 Coq.Vectors.Vector <> rev def
+R6968:6972 Coq.Vectors.VectorDef VectorNotations ::vector_scope:x_'::'_x not
+R7003:7003 Coq.Vectors.VectorDef VectorNotations ::vector_scope:x_'::'_x not
+R6965:6967 demo <> x_n:180 var
+R6973:6979 demo <> find_x' def
+R6982:6982 Coq.Init.Datatypes <> S constr
+R6987:6992 demo <> alpha':173 var
+R6994:6998 demo <> beta':174 var
+R7000:7002 demo <> x_n:180 var
+R7013:7015 demo <> SLE:163 var
+R7017:7021 demo <> alpha:164 var
+R7023:7026 demo <> beta:165 var
+def 7046:7053 <> solution
+R7060:7062 Coq.Init.Datatypes <> nat ind
+binder 7056:7056 <> n:181
+R7072:7081 demo <> TriDiagSys rec
+R7083:7083 demo <> n:181 var
+binder 7066:7068 <> SLE:182
+R7088:7093 demo <> vector def
+R7095:7095 Coq.Reals.Rdefinitions RbaseSymbolsImpl R defax
+R7098:7098 Coq.Init.Datatypes <> S constr
+R7100:7100 demo <> n:181 var
+R7114:7114 demo <> n:181 var
+R7135:7138 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R7123:7132 demo <> TriDiagSys rec
+R7134:7134 demo <> n:183 var
+R7139:7144 demo <> vector def
+R7146:7146 Coq.Reals.Rdefinitions RbaseSymbolsImpl R defax
+R7149:7149 Coq.Init.Datatypes <> S constr
+R7151:7151 demo <> n:183 var
+binder 7172:7174 <> SLE:184
+R7195:7196 Coq.Vectors.Vector <> hd def
+R7199:7199 demo <> b proj
+R7203:7205 demo <> SLE:184 var
+binder 7188:7190 <> b_1:185
+R7226:7227 Coq.Vectors.Vector <> hd def
+R7230:7230 demo <> f proj
+R7234:7236 demo <> SLE:184 var
+binder 7219:7221 <> f_1:186
+R7257:7259 demo <> div def
+R7261:7263 demo <> f_1:186 var
+R7265:7267 demo <> b_1:185 var
+binder 7250:7252 <> x_1:187
+R7276:7276 Coq.Vectors.VectorDef VectorNotations ::vector_scope:'['_x_']' not
+R7280:7280 Coq.Vectors.VectorDef VectorNotations ::vector_scope:'['_x_']' not
+R7277:7279 demo <> x_1:187 var
+R7286:7286 Coq.Init.Datatypes <> S constr
+binder 7297:7299 <> SLE:188
+R7321:7330 demo <> find_alpha def
+R7332:7334 demo <> SLE:188 var
+binder 7312:7316 <> alpha:189
+R7355:7363 demo <> find_beta def
+R7369:7373 demo <> alpha:189 var
+R7365:7367 demo <> SLE:188 var
+binder 7347:7350 <> beta:190
+R7382:7387 demo <> find_x def
+R7399:7402 demo <> beta:190 var
+R7393:7397 demo <> alpha:189 var
+R7389:7391 demo <> SLE:188 var
+R7410:7412 demo <> SLE:182 var
+def 7428:7444 <> find_denominator'
+R7451:7453 Coq.Init.Datatypes <> nat ind
+binder 7447:7447 <> n:191
+R7461:7466 demo <> vector def
+R7468:7468 Coq.Reals.Rdefinitions RbaseSymbolsImpl R defax
+R7471:7471 Coq.Init.Datatypes <> S constr
+R7473:7473 demo <> n:191 var
+binder 7457:7457 <> b:192
+R7484:7489 demo <> vector def
+R7491:7491 Coq.Reals.Rdefinitions RbaseSymbolsImpl R defax
+R7493:7493 demo <> n:191 var
+binder 7478:7478 <> a:193
+binder 7480:7480 <> c:194
+R7505:7505 Coq.Reals.Rdefinitions RbaseSymbolsImpl R defax
+binder 7497:7501 <> alpha:195
+R7510:7515 demo <> vector def
+R7517:7517 Coq.Reals.Rdefinitions RbaseSymbolsImpl R defax
+R7519:7519 demo <> n:191 var
+R7532:7532 demo <> n:191 var
+R7555:7558 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R7541:7546 demo <> vector def
+R7548:7548 Coq.Reals.Rdefinitions RbaseSymbolsImpl R defax
+R7551:7551 Coq.Init.Datatypes <> S constr
+R7553:7553 demo <> n:197 var
+R7569:7572 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R7559:7564 demo <> vector def
+R7566:7566 Coq.Reals.Rdefinitions RbaseSymbolsImpl R defax
+R7568:7568 demo <> n:197 var
+R7583:7586 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R7573:7578 demo <> vector def
+R7580:7580 Coq.Reals.Rdefinitions RbaseSymbolsImpl R defax
+R7582:7582 demo <> n:197 var
+R7587:7592 demo <> vector def
+R7594:7594 Coq.Reals.Rdefinitions RbaseSymbolsImpl R defax
+R7596:7596 demo <> n:197 var
+R7607:7607 Coq.Init.Datatypes <> O constr
+R7625:7626 Coq.Vectors.VectorDef VectorNotations ::vector_scope:'['_']' not
+R7632:7632 Coq.Init.Datatypes <> S constr
+binder 7643:7643 <> b:198
+binder 7645:7645 <> a:199
+binder 7647:7647 <> c:200
+R7667:7668 Coq.Vectors.Vector <> hd def
+R7670:7670 demo <> b:198 var
+binder 7660:7662 <> b_1:201
+R7690:7691 Coq.Vectors.Vector <> tl def
+R7693:7693 demo <> b:198 var
+binder 7683:7685 <> tlb:202
+R7713:7714 Coq.Vectors.Vector <> hd def
+R7716:7716 demo <> a:199 var
+binder 7706:7708 <> a_1:203
+R7736:7737 Coq.Vectors.Vector <> tl def
+R7739:7739 demo <> a:199 var
+binder 7729:7731 <> tla:204
+R7759:7760 Coq.Vectors.Vector <> hd def
+R7762:7762 demo <> c:200 var
+binder 7752:7754 <> c_1:205
+R7782:7783 Coq.Vectors.Vector <> tl def
+R7785:7785 demo <> c:200 var
+binder 7775:7777 <> tlc:206
+R7813:7823 demo <> denominator def
+R7825:7827 demo <> a_1:203 var
+R7829:7833 demo <> alpha:195 var
+R7835:7837 demo <> b_1:201 var
+binder 7798:7808 <> denominator:207
+R7861:7867 demo <> alpha_i def
+R7869:7871 demo <> c_1:205 var
+R7873:7875 demo <> a_1:203 var
+R7877:7881 demo <> alpha:195 var
+R7883:7885 demo <> b_1:201 var
+binder 7850:7856 <> alpha_i:208
+R7905:7909 Coq.Vectors.VectorDef VectorNotations ::vector_scope:x_'::'_x not
+R7949:7949 Coq.Vectors.VectorDef VectorNotations ::vector_scope:x_'::'_x not
+R7894:7904 demo <> denominator:207 var
+R7910:7926 demo <> find_denominator':196 def
+R7942:7948 demo <> alpha_i:208 var
+R7938:7940 demo <> tlc:206 var
+R7934:7936 demo <> tla:204 var
+R7930:7932 demo <> tlb:202 var
+R7958:7958 demo <> b:192 var
+R7960:7960 demo <> a:193 var
+R7962:7962 demo <> c:194 var
+def 7979:7994 <> find_denominator
+R8001:8003 Coq.Init.Datatypes <> nat ind
+binder 7997:7997 <> n:209
+R8013:8022 demo <> TriDiagSys rec
+R8024:8024 demo <> n:209 var
+binder 8007:8009 <> SLE:210
+R8029:8034 demo <> vector def
+R8036:8036 Coq.Reals.Rdefinitions RbaseSymbolsImpl R defax
+R8039:8039 Coq.Init.Datatypes <> S constr
+R8041:8041 demo <> n:209 var
+R8055:8055 demo <> n:209 var
+R8076:8079 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R8064:8073 demo <> TriDiagSys rec
+R8075:8075 demo <> n:211 var
+R8080:8085 demo <> vector def
+R8087:8087 Coq.Reals.Rdefinitions RbaseSymbolsImpl R defax
+R8090:8090 Coq.Init.Datatypes <> S constr
+R8092:8092 demo <> n:211 var
+R8104:8104 Coq.Init.Datatypes <> O constr
+R8134:8135 Coq.Vectors.Vector <> hd def
+R8138:8138 demo <> b proj
+R8142:8144 demo <> SLE:210 var
+binder 8127:8129 <> b_1:212
+R8154:8154 Coq.Vectors.VectorDef VectorNotations ::vector_scope:'['_x_']' not
+R8158:8158 Coq.Vectors.VectorDef VectorNotations ::vector_scope:'['_x_']' not
+R8155:8157 demo <> b_1:212 var
+R8164:8164 Coq.Init.Datatypes <> S constr
+binder 8175:8177 <> SLE:213
+R8197:8198 Coq.Vectors.Vector <> hd def
+R8201:8201 demo <> c proj
+R8205:8207 demo <> SLE:213 var
+binder 8190:8192 <> c_1:214
+R8228:8229 Coq.Vectors.Vector <> hd def
+R8232:8232 demo <> b proj
+R8236:8238 demo <> SLE:213 var
+binder 8221:8223 <> b_1:215
+R8268:8270 demo <> b_1:215 var
+binder 8252:8262 <> denominator:216
+R8294:8300 demo <> alpha_1 def
+R8302:8304 demo <> c_1:214 var
+R8306:8308 demo <> b_1:215 var
+binder 8283:8289 <> alpha_1:217
+R8328:8332 Coq.Vectors.VectorDef VectorNotations ::vector_scope:x_'::'_x not
+R8394:8394 Coq.Vectors.VectorDef VectorNotations ::vector_scope:x_'::'_x not
+R8317:8327 demo <> denominator:216 var
+R8333:8349 demo <> find_denominator' def
+R8352:8352 Coq.Init.Datatypes <> S constr
+R8358:8358 demo <> b proj
+R8362:8364 demo <> SLE:213 var
+R8368:8368 demo <> c proj
+R8372:8374 demo <> SLE:213 var
+R8378:8378 demo <> a proj
+R8382:8384 demo <> SLE:213 var
+R8387:8393 demo <> alpha_1:217 var
+R8405:8407 demo <> SLE:210 var
+def 8422:8434 <> check_nonzero
+R8441:8443 Coq.Init.Datatypes <> nat ind
+binder 8437:8437 <> n:218
+R8451:8456 demo <> vector def
+R8458:8458 Coq.Reals.Rdefinitions RbaseSymbolsImpl R defax
+R8460:8460 demo <> n:218 var
+binder 8447:8447 <> v:219
+R8465:8468 Coq.Init.Datatypes <> bool ind
+R8481:8481 demo <> v:219 var
+R8492:8493 Coq.Vectors.VectorDef VectorNotations ::vector_scope:'['_']' not
+R8498:8501 Coq.Init.Datatypes <> true constr
+R8605:8608 Coq.Vectors.VectorDef VectorNotations ::vector_scope:x_'::'_x not
+R8609:8609 Coq.Vectors.Vector <> t ind
+R8617:8624 Coq.Reals.RIneq <> Req_EM_T thm
+R8646:8658 demo <> check_nonzero:220 def
+R8635:8639 Coq.Init.Datatypes <> false constr
+def 8684:8696 <> is_consistent
+R8703:8705 Coq.Init.Datatypes <> nat ind
+binder 8699:8699 <> n:222
+R8715:8724 demo <> TriDiagSys rec
+R8726:8726 demo <> n:222 var
+binder 8709:8711 <> SLE:223
+R8777:8779 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R8741:8753 demo <> check_nonzero def
+R8756:8771 demo <> find_denominator def
+R8773:8775 demo <> SLE:223 var
+R8780:8783 Coq.Init.Datatypes <> true constr
+prf 8805:8815 <> no_brackets
+R8838:8838 Coq.Reals.Rdefinitions RbaseSymbolsImpl R defax
+binder 8827:8828 <> r1:224
+binder 8830:8831 <> r2:225
+binder 8833:8834 <> r3:226
+R8860:8862 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R8852:8854 Coq.Reals.Rdefinitions <> ::R_scope:x_'/'_x not
+R8847:8849 Coq.Reals.Rdefinitions <> ::R_scope:x_'*'_x not
+R8845:8846 demo <> r1:224 var
+R8850:8851 demo <> r2:225 var
+R8855:8856 demo <> r3:226 var
+R8866:8869 Coq.Reals.Rdefinitions <> ::R_scope:x_'*'_x not
+R8877:8877 Coq.Reals.Rdefinitions <> ::R_scope:x_'*'_x not
+R8864:8865 demo <> r1:224 var
+R8872:8874 Coq.Reals.Rdefinitions <> ::R_scope:x_'/'_x not
+R8870:8871 demo <> r2:225 var
+R8875:8876 demo <> r3:226 var
+R8917:8927 Coq.Reals.Raxioms <> Rmult_assoc thm
+R8917:8927 Coq.Reals.Raxioms <> Rmult_assoc thm
+prf 8946:8952 <> correct
+R8969:8971 Coq.Init.Datatypes <> nat ind
+binder 8965:8965 <> n:227
+R8981:8990 demo <> TriDiagSys rec
+R8992:8992 demo <> n:227 var
+binder 8975:8977 <> SLE:228
+R9013:9016 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R8996:9008 demo <> is_consistent def
+R9010:9012 demo <> SLE:228 var
+R9046:9048 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R9017:9026 demo <> matrix_mul def
+R9033:9040 demo <> solution def
+R9042:9044 demo <> SLE:228 var
+R9028:9030 demo <> SLE:228 var
+R9049:9049 demo <> f proj
+R9053:9055 demo <> SLE:228 var
+R9138:9150 demo <> is_consistent def
+R9153:9160 demo <> solution def
+R9163:9172 demo <> matrix_mul def
+R9228:9230 demo <> div def
+R9233:9235 demo <> sub def
+R9238:9240 demo <> mul def
+R9243:9245 demo <> add def
+R9248:9258 demo <> denominator def
+R9261:9267 demo <> alpha_i def
+R9270:9275 demo <> beta_i def
+R9278:9280 demo <> x_j def
+R9283:9285 demo <> x_n def
+R9288:9294 demo <> alpha_1 def
+R9297:9302 demo <> beta_1 def
+R9355:9356 Coq.Vectors.Vector <> hd def
+R9368:9369 Coq.Vectors.Vector <> hd def
+R9381:9382 Coq.Vectors.Vector <> hd def
+R9331:9341 demo <> no_brackets thm
+R9355:9356 Coq.Vectors.Vector <> hd def
+R9368:9369 Coq.Vectors.Vector <> hd def
+R9381:9382 Coq.Vectors.Vector <> hd def
+R9331:9341 demo <> no_brackets thm
+R9355:9356 Coq.Vectors.Vector <> hd def
+R9368:9369 Coq.Vectors.Vector <> hd def
+R9381:9382 Coq.Vectors.Vector <> hd def
+R9331:9341 demo <> no_brackets thm
+R9399:9402 Coq.Reals.Rdefinitions <> Rdiv def
+R9444:9445 Coq.Vectors.Vector <> hd def
+R9457:9458 Coq.Vectors.Vector <> hd def
+R9417:9430 Coq.Reals.RIneq <> Rinv_r_simpl_m thm
+R9444:9445 Coq.Vectors.Vector <> hd def
+R9457:9458 Coq.Vectors.Vector <> hd def
+R9417:9430 Coq.Reals.RIneq <> Rinv_r_simpl_m thm
+R9444:9445 Coq.Vectors.Vector <> hd def
+R9457:9458 Coq.Vectors.Vector <> hd def
+R9417:9430 Coq.Reals.RIneq <> Rinv_r_simpl_m thm
+R9444:9445 Coq.Vectors.Vector <> hd def
+R9457:9458 Coq.Vectors.Vector <> hd def
+R9417:9430 Coq.Reals.RIneq <> Rinv_r_simpl_m thm
+R9482:9483 Coq.Vectors.Vector <> hd def
+R9536:9548 demo <> is_consistent def
+R9685:9697 demo <> is_consistent def
+R9700:9707 demo <> solution def
+R9710:9719 demo <> matrix_mul def
+R9772:9784 demo <> is_consistent def
+R9805:9815 demo <> matrix_mul' def
