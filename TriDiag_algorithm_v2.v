@@ -298,6 +298,8 @@ Proof.
   simpl.
 Admitted.
 
+
+
 Lemma v0_eq_nil : forall (v : vector 0), v = [].
 Proof.
 intros.
@@ -307,7 +309,6 @@ Lemma vec_eq_hd_tl : forall {n : nat} (b : vector (S n)), b = hd b :: tl b.
 Proof.
 Admitted.
 
-Lemma rev_hd_tl : forall {n : nat} (b : vector (S n)), rev (hd b :: tl b) = b.
 
 
 (* Корректность построенного разложения*)
@@ -484,7 +485,7 @@ Definition L_mul {n : nat} (L : L_matrix n) (y : vector (S n)) : vector (S n) :=
 
 
 (* TODO добавить условие совместности *)
-Lemma L_mul'_cor : forall {n : nat} (l' b : vector n) (y0 : R),
+Lemma L_mul'_cor : forall {n : nat} (l' b : vector n) (y0 : R), check_nonzero l' =  true ->
 L_mul' l' (find_y' b l' y0) y0 = b.
 Proof.
 intros n l' b.
@@ -515,8 +516,7 @@ rewrite Rplus_0_r.
 rewrite <- vec_eq_hd_tl.
 reflexivity.
 ++
-(*TODO подкрутить совместность и отсутвие деления на 0*)
-
+apply H.
 Admitted.
 
 
@@ -537,7 +537,7 @@ rewrite Rinv_r_simpl_m.
 rewrite <- vec_eq_hd_tl.
 reflexivity.
 +
-(*TODO подкрутить отсутвие деления на 0*)
+apply H.
 Admitted.
 
 
@@ -571,10 +571,10 @@ Fixpoint find_x' {n : nat} (y u v : vector n) (xi_ : R) : vector n :=
   end y u v.
 
 
-Definition find_x {n : nat} (U : U_matrix n) (y : vector (S n)) : vector (S n) :=
+Definition find_x {n : nat} (U : U_matrix n) (y' : vector (S n)) : vector (S n) :=
   let u := rev (u _ U) in
   let v := rev (v _ U) in
-
+  let y := rev y' in
   let vn := hd v in
   let yn := hd y in
   let initv := tl v in
@@ -582,7 +582,7 @@ Definition find_x {n : nat} (U : U_matrix n) (y : vector (S n)) : vector (S n) :
 
   let xn := xn_find yn vn in
 
-  rev (xn :: (find_x' inity u initv xn)).
+  rev(xn :: (find_x' inity u initv xn)).
 
 
 (* умножение матриц Ux *)
@@ -614,8 +614,7 @@ Definition U_mul {n : nat} (U : U_matrix n) (x : vector (S n)) : vector (S n) :=
   let initx := tl x in
 
   let yn := vn * xn in
-  (*TODO тут возможно есть косяк*)
-  yn :: (U_mul' initx initv u xn).
+  rev (yn :: (U_mul' initx initv u xn)).
 
 
 
@@ -656,7 +655,7 @@ Admitted.
 
 
 Lemma U_solution:
-  forall {n : nat} (U : U_matrix n) (y : vector (S n)), magicU U -> U_mul U (find_x U y) = y.
+  forall {n : nat} (U : U_matrix n) (y : vector (S n)), magicU U -> (U_mul U ((find_x U y))) = y.
 Proof.
 intros.
 unfold U_mul, find_x.
@@ -670,6 +669,7 @@ rewrite <- Rmult_assoc.
 rewrite Rinv_r_simpl_m.
 +
 rewrite <- vec_eq_hd_tl.
+rewrite rev_rev.
 reflexivity.
 +
 (*TODO подкрутить отсутвие деления на 0*)
@@ -681,10 +681,10 @@ Admitted.
 
 (* Умножение матриц Ax *)
 
-Fixpoint matrix_mul' (n : nat) (d a x : vector (S n)) (c : vector n) (xi : R) : vector (S n) :=
-  match n return vector (S n) -> vector (S n) -> vector (S n) -> vector n -> vector (S n) with
+Fixpoint matrix_mul' (n : nat) (a x : vector (S n)) (d c : vector n) (xi di : R) : vector (S n) :=
+  match n return vector n -> vector (S n) -> vector (S n) -> vector n -> vector (S n) with
   | 0 => fun d a x c =>
-    let d1 := hd d in
+    let d1 := di in
     let a1 := hd a in
     let x1 := hd x in
     let fn := (d1 * xi) + (a1 * x1) in
@@ -700,10 +700,10 @@ Fixpoint matrix_mul' (n : nat) (d a x : vector (S n)) (c : vector n) (xi : R) : 
     let tlx := tl x in
     let x2 := hd tlx in
     let f1 := a1 * xi in
-    let f2 := d1 * x1 in
+    let f2 := di * x1 in
     let f3 :=c1 * x2 in
     let f := f1 + f2 + f3 in
-    f :: (matrix_mul' k tld tla tlx tlc x1)
+    f :: (matrix_mul' k tla tlx tld tlc x1 di)
   end d a x c.
 
 
@@ -719,73 +719,19 @@ Definition matrix_mul {n : nat} (SLE : A_matrix n) (x : vector (S n)) : vector (
     let tla := tl (a'' _ SLE) in
     let c1 := hd (c'' _ SLE) in
     let tlc := tl (c'' _ SLE) in
+    let d1 := hd (d'' _ SLE) in
+    let tld := tl (d'' _ SLE) in
     let x1 := hd x in
     let tlx := tl x in
     let x2 := hd tlx in
     let f1 :=  (a1 * x1) + (c1 * x2) in
-    f1 :: (matrix_mul' k (d'' _ SLE) tla tlx tlc x1)
+    f1 :: (matrix_mul' k tla tlx tld tlc x1 d1)
   end SLE x.
 
 
 
 
 (* Ассоциативность умножения матриц *)
-
-
-
-
-
-
-
-
-Lemma matrix_mul'_cor : forall {n : nat}(L : L_matrix n) (U : U_matrix n) (x b : vector (S n)) (d0 x0 y0 v0 u0 : R),
-let l := l _ L in
-let u := u _ U in
-let v := v _ V in
-
-
-let LU' := LU_mul' v l u v0 u0 in
-let a := a' _ LU' in
-let d := d' _ LU' in
-let c' := c' _ LU' in
-let MM' := matrix_mul' d a x c
-
-let 
-
-
-
-Proof.
-intros n.
-induction n.
-+
-intros.
-unfold matrix_mul', L_mul'.
-unfold x, y.
-unfold find_x, find_y'.
-simpl.
-admit.
-+
-simpl.
-intros.
-simpl.
-rewrite IHn.
-Admitted.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 Lemma LUx_assoc : forall {n : nat} (L : L_matrix n) (U : U_matrix n) (x : vector (S n)),
       matrix_mul (LU_mul L U) (x) = L_mul (L) (U_mul (U) (x)).
@@ -806,18 +752,34 @@ rewrite <- hd_eq_one_v with (v).
 rewrite rev_one.
 simpl.
 rewrite <- Rmult_assoc.
+rewrite hd_eq_one_v.
+rewrite <- hd_eq_one_v with (x).
+rewrite rev_one.
 reflexivity.
 +
 unfold matrix_mul, L_mul, LU_mul, U_mul.
 simpl.
-rewrite matrix_mul'_cor.
+destruct L as [l].
+destruct U as [v u].
+simpl.
 
 
+assert (hd l * hd v * hd x + hd l * hd u * hd (tl x) = hd l * hd (rev (hd (rev v) * hd (rev x) :: hd (tl (rev v)) * hd (tl (rev x)) + hd (rev u) * hd (rev x) :: U_mul' (tl (tl (rev x))) (tl (tl (rev v))) (tl (rev u)) (hd (tl (rev x)))))).
+++
 
+admit.
+++
+rewrite <- H.
+assert (matrix_mul' n (a'' n (LU_mul' (tl v) (tl l) (tl u) (hd v) (hd u))) (tl x) (d'' n (LU_mul' (tl v) (tl l) (tl u) (hd v) (hd u))) (c'' n (LU_mul' (tl v) (tl l) (tl u) (hd v) (hd u))) (hd x) (hd v) = 
+hd (rev (hd (rev v) * hd (rev x) :: hd (tl (rev v)) * hd (tl (rev x)) + hd (rev u) * hd (rev x) :: U_mul' (tl (tl (rev x))) (tl (tl (rev v))) (tl (rev u)) (hd (tl (rev x))))) + hd (tl l) * hd (tl (rev (hd (rev v) * hd (rev x) :: hd (tl (rev v)) * hd (tl (rev x)) + hd (rev u) * hd (rev x) :: U_mul' (tl (tl (rev x))) (tl (tl (rev v))) (tl (rev u)) (hd (tl (rev x)))))) 
+:: L_mul' (tl (tl l)) (tl (tl (rev (hd (rev v) * hd (rev x) :: hd (tl (rev v)) * hd (tl (rev x)) + hd (rev u) * hd (rev x) :: U_mul' (tl (tl (rev x))) (tl (tl (rev v))) (tl (rev u)) (hd (tl (rev x))))))) (hd (tl (rev (hd (rev v) * hd (rev x) :: hd (tl (rev v)) * hd (tl (rev x)) + hd (rev u) * hd (rev x) :: U_mul' (tl (tl (rev x))) (tl (tl (rev v))) (tl (rev u)) (hd (tl (rev x)))))))).
++++
+admit.
 
++++
+rewrite <- H0.
+reflexivity.
 Admitted.
-
-
 
 
 (* Теоерма о корректности найденного решения *)
@@ -851,35 +813,115 @@ Qed.
 
 
 
-Theorem correct':
-  forall {n : nat} (SLE : TriDiagSys n), is_consistent SLE -> matrix_mul (mkA SLE) (find_x (make_U SLE) (find_y (make_L SLE) (b _ SLE))) = b _ SLE.
+Lemma mul_L : forall {n : nat} (L : L_matrix n) (b : vector (S n)),  
+let v_0 := mkVector n 0 in
+let l := l _ L in
+let v_1 := one_v _ L in
+let M := mkA' v_1 v_0 l in
+magicL L -> matrix_mul M (find_y L b) = b.
 Proof.
-intros.
+intros n L b.
 induction n.
 +
-unfold matrix_mul, find_x, find_y, make_L, make_U.
+unfold matrix_mul, find_y.
 simpl.
-destruct SLE as [d a c b].
+unfold y1_find.
+destruct L as [l].
 simpl.
-unfold xn_find, y1_find.
+unfold Rdiv.
+rewrite <- Rmult_assoc.
+rewrite Rinv_r_simpl_m.
+++
+rewrite hd_eq_one_v.
+reflexivity.
+++
 admit.
 +
+intros.
+unfold matrix_mul, find_y.
+
+Admitted.
+
+Lemma mul_L_mul : forall {n : nat} (L : L_matrix n) (b : vector (S n)), 
+let v_0 := mkVector n 0 in
+let l := l _ L in
+let v_1 := one_v _ L in
+let M := mkA' v_1 v_0 l in
+magicL L -> matrix_mul M b = L_mul L b.
+Proof.
+intros.
 unfold matrix_mul.
+rewrite mul_L.
+Admitted.
 
-destruct SLE as [d a c b].
+
+Lemma mul_U : forall {n : nat} (U : U_matrix n) (y : vector (S n)),
+let u := u _ U in
+let v := v _ U in
+let v_0 := mkVector n 0 in
+let M := mkA' v_0 u v in
+magicU U -> matrix_mul M (find_x U y) = y.
+Proof.
+Admitted.
+
+Lemma mul_U_mul : forall {n : nat} (U : U_matrix n) (y : vector (S n)),
+let u := u _ U in
+let v := v _ U in
+let v_0 := mkVector n 0 in
+let M := mkA' v_0 u v in
+magicU U -> matrix_mul M (y) = U_mul U (y).
+Proof.
+Admitted.
+
+
+
+
+
+
+Lemma LUx_assoc' : forall {n : nat} (L : L_matrix n) (U : U_matrix n) (x : vector (S n)), magicL L -> magicU U ->
+      matrix_mul (LU_mul L U) (x) = L_mul (L) (U_mul (U) (x)).
+Proof.
+intros.
+
+rewrite <- mul_L_mul.
+rewrite  <- mul_U_mul.
++
+induction n.
+++
+unfold matrix_mul, L_mul, U_mul.
 simpl.
-pose (L := make_L {| d := d; a := a; c := c; b := b |}).
-replace ((make_L {| d := d; a := a; c := c; b := b |})) with L.
+destruct L as [l].
+destruct U as [v u].
+simpl.
+simpl.
+rewrite <- hd_eq_one_v with (x).
+simpl.
+rewrite <- hd_eq_one_v with (v).
+simpl.
+rewrite <- Rmult_assoc.
+reflexivity.
 ++
-pose (U := make_U {| d := d; a := a; c := c; b := b |}).
-replace (make_U {| d := d; a := a; c := c; b := b |}) with U.
+unfold matrix_mul, L_mul, LU_mul, U_mul.
+simpl.
+destruct L as [l].
+destruct U as [v u].
+simpl.
+pose (q := matrix_mul' n (a'' n (LU_mul' (tl v) (tl l) (tl u) (hd v) (hd u))) (tl x) (d'' n (LU_mul' (tl v) (tl l) (tl u) (hd v) (hd u))) (c'' n (LU_mul' (tl v) (tl l) (tl u) (hd v) (hd u))) (hd x) (hd v)).
+replace (matrix_mul' n (tl l) (matrix_mul' n (tl v) (tl x) (mkVector n 0) (tl u) (hd x) 0) (tl one_v0) (mkVector n 0) (hd v * hd x + hd u * hd (tl x)) (hd one_v0)) with q.
 +++
-rewrite <- L_solution.
-
+replace (matrix_mul' n (a'' n (LU_mul' (tl v) (tl l) (tl u) (hd v) (hd u))) (tl x) (d'' n (LU_mul' (tl v) (tl l) (tl u) (hd v) (hd u))) (c'' n (LU_mul' (tl v) (tl l) (tl u) (hd v) (hd u))) (hd x) (hd v)) with q.
+-
+rewrite Rmult_0_l.
+rewrite Rplus_0_r.
+(*доказано*)
 admit.
+- 
+reflexivity.
 +++
-reflexivity.
-++
-reflexivity.
+unfold q.
+rewrite mul_U_mul.
+admit.
++
+apply H0.
 
-Qed.
+Admitted.
