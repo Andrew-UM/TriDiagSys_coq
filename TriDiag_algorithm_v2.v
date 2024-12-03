@@ -277,6 +277,7 @@ Definition is_consistent {n : nat} (SLE : TriDiagSys n) : Prop :=
 
 Lemma vec_eq_hd_tl : forall {n : nat} (b : vector (S n)), b = hd b :: tl b.
 Proof.
+intros.
 Admitted.
 
 Lemma no_brackets : forall (r1 r2 r3 : R),
@@ -290,7 +291,7 @@ Lemma hd_eq_one_v : forall (b : vector 1), [hd b] = b.
 Proof.
 intros b.
 rewrite vec_eq_hd_tl.
-
+unfold tl.
 Admitted.
 
 
@@ -323,87 +324,87 @@ LU_mul' v (l' _ (find_LU' a v c u0)) (u' _ (find_LU' a v c u0)) v0 u0 = mkA' d c
 Proof.
 intros n a d c.
 induction n.
-+
-simpl.
-intros.
-unfold li_find.
-unfold Rdiv.
-rewrite Rinv_1.
-rewrite Rmult_1_r.
-rewrite Rmult_1_r.
-unfold Rminus.
-rewrite Rplus_comm.
-rewrite Rplus_assoc.
-rewrite Rplus_opp_l.
-rewrite Rplus_0_r.
-rewrite hd_eq_one_v.
-rewrite (v0_eq_nil d).
-rewrite (v0_eq_nil c).
-reflexivity.
-+
-simpl. intros.
-unfold LU_mul'.
-unfold mkA'.
-simpl.
-rewrite IHn.
-simpl.
-rewrite <- vec_eq_hd_tl.
-unfold li_find.
-unfold Rdiv.
-set (x := (hd a - u0)).
-rewrite Rmult_comm.
-rewrite <- Rmult_assoc.
-rewrite Rinv_r_simpl_m with (hd d) (x).
-++
-unfold x.
-unfold Rminus.
-rewrite <- Rplus_assoc.
-rewrite Rplus_comm.
-rewrite <- Rplus_assoc.
-rewrite Rplus_opp_l.
-rewrite Rplus_0_l.
-rewrite <- vec_eq_hd_tl.
-unfold ui_find.
-rewrite Rmult_comm.
-rewrite <- Rmult_assoc.
-set (q := (hd a + - u0)).
-unfold Rdiv.
-rewrite Rinv_mult.
-unfold Rdiv.
-rewrite <- Rmult_assoc.
-rewrite Rinv_inv.
-replace (hd c * / q * hd d * q * / hd d) with (hd c).
-+++
-  rewrite <- vec_eq_hd_tl.
-  reflexivity.
-+++
-    rewrite Rmult_assoc with (hd c) (/ q) (hd d).
-    rewrite Rmult_comm with (hd c) ((/ q * hd d)).
+  +
+    simpl.
+    intros.
+    unfold li_find.
+    unfold Rdiv.
+    rewrite Rinv_1.
+    rewrite Rmult_1_r.
+    rewrite Rmult_1_r.
+    unfold Rminus.
+    rewrite Rplus_comm.
+    rewrite Rplus_assoc.
+    rewrite Rplus_opp_l.
+    rewrite Rplus_0_r.
+    rewrite hd_eq_one_v.
+    rewrite (v0_eq_nil d).
+    rewrite (v0_eq_nil c).
+    reflexivity.
+  +
+    simpl. intros.
+    unfold LU_mul'.
+    unfold mkA'.
+    simpl.
+    rewrite IHn.
+    simpl.
+    rewrite <- vec_eq_hd_tl.
+    unfold li_find.
+    unfold Rdiv.
+    set (x := (hd a - u0)).
     rewrite Rmult_comm.
-    rewrite Rmult_comm with (/q) (hd d).
+    rewrite <- Rmult_assoc.
+    rewrite Rinv_r_simpl_m with (hd d) (x).
+      ++
+        unfold x.
+        unfold Rminus.
+        rewrite <- Rplus_assoc.
+        rewrite Rplus_comm.
+        rewrite <- Rplus_assoc.
+        rewrite Rplus_opp_l.
+        rewrite Rplus_0_l.
+        rewrite <- vec_eq_hd_tl.
+        unfold ui_find.
+        rewrite Rmult_comm.
+        rewrite <- Rmult_assoc.
+        set (q := (hd a + - u0)).
+        unfold Rdiv.
+        rewrite Rinv_mult.
+        unfold Rdiv.
+        rewrite <- Rmult_assoc.
+        rewrite Rinv_inv.
+        replace (hd c * / q * hd d * q * / hd d) with (hd c).
+          +++
+            rewrite <- vec_eq_hd_tl.
+            reflexivity.
+          +++
+            rewrite Rmult_assoc with (hd c) (/ q) (hd d).
+            rewrite Rmult_comm with (hd c) ((/ q * hd d)).
+            rewrite Rmult_comm.
+            rewrite Rmult_comm with (/q) (hd d).
 
-    rewrite <- Rmult_assoc.
-    rewrite <- Rmult_assoc.
-    rewrite <- Rmult_assoc.
-    rewrite Rmult_comm with (/ hd d) (hd d).
-    rewrite Rinv_r.
-    ++++
-    rewrite Rmult_1_l.
-    rewrite Rmult_comm.
-    rewrite <- Rmult_assoc.
-    rewrite Rinv_r.
-      -
-      rewrite Rmult_1_l.
-      reflexivity.
-      -
-      unfold q.
-      (*проверить отсутвие деления на 0*)
-    admit.
-    ++++
-    (*проверить отсутвие деления на 0*)
-admit.
-++
-(*проверить отсутвие деления на 0*)
+            rewrite <- Rmult_assoc.
+            rewrite <- Rmult_assoc.
+            rewrite <- Rmult_assoc.
+            rewrite Rmult_comm with (/ hd d) (hd d).
+            rewrite Rinv_r.
+              ++++
+                rewrite Rmult_1_l.
+                rewrite Rmult_comm.
+                rewrite <- Rmult_assoc.
+                rewrite Rinv_r.
+                  -
+                  rewrite Rmult_1_l.
+                  reflexivity.
+                  -
+                  unfold q.
+                  (*проверить отсутвие деления на 0*)
+                admit.
+              ++++
+              (*проверить отсутвие деления на 0*)
+                admit.
+      ++
+        (*проверить отсутвие деления на 0*)
 Admitted.
 
 
@@ -415,71 +416,70 @@ Lemma LU_Decomposition:
 Proof.
 intros.
 induction n.
-+
-unfold LU_mul, make_L, make_U.
-simpl.
-destruct SLE as [d a c].
-simpl.
-rewrite Rmult_1_r.
-rewrite hd_eq_one_v.
-rewrite v0_eq_nil with c.
-rewrite v0_eq_nil with d.
-reflexivity.
-+
-unfold LU_mul, make_L, make_U.
-simpl.
-destruct SLE as [d a c].
-simpl.
-rewrite LU'_cor.
-simpl.
-unfold mkA'.
-rewrite <- vec_eq_hd_tl.
-unfold l1_find.
-unfold Rdiv.
-unfold ui_find.
-rewrite Rmult_comm.
-rewrite <- Rmult_assoc.
-replace (hd d * hd a * / hd d) with (hd a).
-++
-  rewrite <- vec_eq_hd_tl.
-  replace (hd a * / hd d * (hd c / (hd a * / hd d))) with (hd c).
-  +++
-    rewrite <- vec_eq_hd_tl.
-    unfold mkA.
+  +
+    unfold LU_mul, make_L, make_U.
     simpl.
+    destruct SLE as [d a c].
+    simpl.
+    rewrite Rmult_1_r.
+    rewrite hd_eq_one_v.
+    rewrite v0_eq_nil with c.
+    rewrite v0_eq_nil with d.
     reflexivity.
-  +++
+  +
+    unfold LU_mul, make_L, make_U.
+    simpl.
+    destruct SLE as [d a c].
+    simpl.
+    rewrite LU'_cor.
+    simpl.
+    unfold mkA'.
+    rewrite <- vec_eq_hd_tl.
+    unfold l1_find.
     unfold Rdiv.
-    rewrite <- Rmult_assoc.
-    rewrite Rinv_mult.
-    rewrite Rinv_inv.
-    unfold Rdiv.
-    rewrite <- Rmult_assoc.
-    rewrite Rmult_comm with ( hd a) ( /hd d).
+    unfold ui_find.
     rewrite Rmult_comm.
     rewrite <- Rmult_assoc.
-    rewrite <- Rmult_assoc.
-    rewrite <- Rmult_assoc.
-    rewrite Rmult_inv_m_id_r.
-    ++++
-      rewrite Rmult_inv_r_id_m.
-      -
-      reflexivity.
-      -
-      unfold is_consistent in H.
-      unfold magicL in H.
-      (*переделать условия совместности*)
-      admit.
-    ++++
-    (*ЭЭЭЭ... Оно модет быть нулем...*)
-    admit.
-++
-rewrite Rmult_comm with (hd d) (hd a).
-rewrite Rinv_r_simpl_l with (hd d) (hd a).
-+++
-reflexivity.
-+++
-(*ЭЭЭЭ... Оно модет быть нулем...*)
+    replace (hd d * hd a * / hd d) with (hd a).
+    ++
+      rewrite <- vec_eq_hd_tl.
+      replace (hd a * / hd d * (hd c / (hd a * / hd d))) with (hd c).
+      +++
+        rewrite <- vec_eq_hd_tl.
+        unfold mkA.
+        simpl.
+        reflexivity.
+      +++
+        unfold Rdiv.
+        rewrite <- Rmult_assoc.
+        rewrite Rinv_mult.
+        rewrite Rinv_inv.
+        unfold Rdiv.
+        rewrite <- Rmult_assoc.
+        rewrite Rmult_comm with ( hd a) ( /hd d).
+        rewrite Rmult_comm.
+        rewrite <- Rmult_assoc.
+        rewrite <- Rmult_assoc.
+        rewrite <- Rmult_assoc.
+        rewrite Rmult_inv_m_id_r.
+          ++++
+            rewrite Rmult_inv_r_id_m.
+            -
+              reflexivity.
+            -
+              unfold is_consistent in H.
+              (*переделать условия совместности*)
+              admit.
+          ++++
+            (*ЭЭЭЭ... Оно модет быть нулем...*)
+            admit.
+    ++
+      rewrite Rmult_comm with (hd d) (hd a).
+      rewrite Rinv_r_simpl_l with (hd d) (hd a).
+        +++
+          reflexivity.
+        +++
+          (*ЭЭЭЭ... Оно модет быть нулем...*)
 Admitted.
 
 
@@ -562,35 +562,35 @@ L_mul' l' (find_y' b l' y0) y0 = b.
 Proof.
 intros n l' b.
 induction n.
-+
-intros.
-unfold L_mul', find_y', yi_find.
-simpl.
-rewrite v0_eq_nil.
-reflexivity.
-+
-simpl. intros.
-set (y0' := (yi_find (hd b) y0 (hd l'))).
-rewrite (IHn (tl l') ).
-unfold y0'.
-unfold yi_find.
-unfold Rdiv.
-rewrite <- Rmult_assoc.
-rewrite Rinv_r_simpl_m.
-++
-unfold Rminus.
-rewrite <- Rplus_assoc.
-rewrite Rplus_comm.
-rewrite <- Rplus_assoc.
-rewrite Rplus_opp_l.
-rewrite Rplus_comm.
-rewrite Rplus_0_r.
-rewrite <- vec_eq_hd_tl.
-reflexivity.
-++
-unfold check_nonzero.
-(*Проверить отсутвие деления на 0, раскрыть check_nonzero*)
-(*apply H.*)
+  +
+    intros.
+    unfold L_mul', find_y', yi_find.
+    simpl.
+    rewrite v0_eq_nil.
+    reflexivity.
+  +
+    simpl. intros.
+    set (y0' := (yi_find (hd b) y0 (hd l'))).
+    rewrite (IHn (tl l') ).
+    unfold y0'.
+    unfold yi_find.
+    unfold Rdiv.
+    rewrite <- Rmult_assoc.
+    rewrite Rinv_r_simpl_m.
+      ++
+        unfold Rminus.
+        rewrite <- Rplus_assoc.
+        rewrite Rplus_comm.
+        rewrite <- Rplus_assoc.
+        rewrite Rplus_opp_l.
+        rewrite Rplus_comm.
+        rewrite Rplus_0_r.
+        rewrite <- vec_eq_hd_tl.
+        reflexivity.
+      ++
+        unfold check_nonzero.
+        (*Проверить отсутвие деления на 0, раскрыть check_nonzero*)
+        (*apply H.*)
 Admitted.
 
 
@@ -607,12 +607,12 @@ unfold y1_find.
 unfold Rdiv.
 rewrite <- Rmult_assoc.
 rewrite Rinv_r_simpl_m.
-+
-rewrite <- vec_eq_hd_tl.
-reflexivity.
-+
-(*Проверить отсутвие деления на 0, раскрыть check_nonzero*)
-(*apply H.*)
+  +
+    rewrite <- vec_eq_hd_tl.
+    reflexivity.
+  +
+  (*Проверить отсутвие деления на 0, раскрыть check_nonzero*)
+  (*apply H.*)
 Admitted.
 
 
@@ -703,29 +703,29 @@ U_mul' (find_x' y u v x0) v u x0 = y.
 Proof.
 intros n y u v.
 induction n.
-+
-intros.
-unfold U_mul'.
-rewrite v0_eq_nil.
-reflexivity.
-+
-simpl. intros.
-set (x0' := (xi_find (hd y) (hd y) x0 (hd v))).
-rewrite IHn.
-unfold x0', xi_find.  
-unfold Rdiv.
-rewrite <- Rmult_assoc.
-rewrite Rinv_r_simpl_m.
-++
-rewrite Rmult_comm.
-unfold Rminus.
-rewrite Rplus_assoc.
-rewrite Rplus_opp_l.
-rewrite Rplus_0_r.
-rewrite <- vec_eq_hd_tl.
-reflexivity.
-++
-(*Проверить отсутвие деления на 0*)
+  +
+    intros.
+    unfold U_mul'.
+    rewrite v0_eq_nil.
+    reflexivity.
+  +
+    simpl. intros.
+    set (x0' := (xi_find (hd y) (hd y) x0 (hd v))).
+    rewrite IHn.
+    unfold x0', xi_find.  
+    unfold Rdiv.
+    rewrite <- Rmult_assoc.
+    rewrite Rinv_r_simpl_m.
+      ++
+        rewrite Rmult_comm.
+        unfold Rminus.
+        rewrite Rplus_assoc.
+        rewrite Rplus_opp_l.
+        rewrite Rplus_0_r.
+        rewrite <- vec_eq_hd_tl.
+        reflexivity.
+      ++
+        (*Проверить отсутвие деления на 0*)
 Admitted.
 
 
@@ -742,12 +742,12 @@ unfold xn_find.
 unfold Rdiv.
 rewrite <- Rmult_assoc.
 rewrite Rinv_r_simpl_m.
-+
-rewrite <- vec_eq_hd_tl.
-rewrite rev_rev.
-reflexivity.
-+
-(*TODO подкрутить отсутвие деления на 0*)
+  +
+    rewrite <- vec_eq_hd_tl.
+    rewrite rev_rev.
+    reflexivity.
+  +
+    (*TODO подкрутить отсутвие деления на 0*)
 Admitted.
 
 
@@ -865,18 +865,18 @@ Proof.
 intros.
 rewrite <- LU_Decomposition.  
   +
-  rewrite LUx_assoc.
-  rewrite U_solution.
-    ++
-    rewrite L_solution.
-      +++
-      reflexivity.
-      +++
-      apply H.
-    ++
-    apply H.
+     rewrite LUx_assoc.
+     rewrite U_solution.
+      ++
+       rewrite L_solution.
+        +++
+         reflexivity.
+        +++
+          apply H.
+      ++
+        apply H.
   +
-  apply H.
+    apply H.
 Qed.
 
 
@@ -884,157 +884,6 @@ Qed.
 
 
 
-
-
-
-
-Lemma mul_L : forall {n : nat} (L : L_matrix n) (b : vector (S n)),  
-let v_0 := mkVector n 0 in
-let l := l _ L in
-let v_1 := one_v _ L in
-let M := mkA' v_1 v_0 l in
-magicL L -> matrix_mul M (find_y L b) = b.
-Proof.
-intros n L b.
-induction n.
-+
-unfold matrix_mul, find_y.
-simpl.
-unfold y1_find.
-destruct L as [l].
-simpl.
-unfold Rdiv.
-rewrite <- Rmult_assoc.
-rewrite Rinv_r_simpl_m.
-++
-rewrite hd_eq_one_v.
-reflexivity.
-++
-admit.
-+
-intros.
-unfold matrix_mul, find_y.
-unfold matrix_mul, find_y in IHn.
-rewrite vec_eq_hd_tl with (b).
-
-Admitted.
-
-Lemma mul_L_mul : forall {n : nat} (L : L_matrix n) (b : vector (S n)), 
-let v_0 := mkVector n 0 in
-let l := l _ L in
-let v_1 := one_v _ L in
-let M := mkA' v_1 v_0 l in
-magicL L -> matrix_mul M b = L_mul L b.
-Proof.
-intros.
-destruct M, L.
-induction n.
-+
-  unfold matrix_mul, L_mul.
-  simpl.
-  admit.
-+
-
-Admitted.
-
-
-Lemma mul_U : forall {n : nat} (U : U_matrix n) (y : vector (S n)),
-let u := u _ U in
-let v := v _ U in
-let v_0 := mkVector n 0 in
-let M := mkA' v_0 u v in
-magicU U -> matrix_mul M (find_x U y) = y.
-Proof.
-Admitted.
-
-Lemma mul_U_mul : forall {n : nat} (U : U_matrix n) (y : vector (S n)),
-let u := u _ U in
-let v := v _ U in
-let v_0 := mkVector n 0 in
-let M := mkA' v_0 u v in
-magicU U -> matrix_mul M (y) = U_mul U (y).
-Proof.
-Admitted.
-
-
-
-
-
-
-Lemma LUx_assoc' : forall {n : nat} (L : L_matrix n) (U : U_matrix n) (x : vector (S n)), magicL L -> magicU U ->
-      matrix_mul (LU_mul L U) (x) = L_mul (L) (U_mul (U) (x)).
-Proof.
-intros.
-
-rewrite <- mul_L_mul.
-rewrite  <- mul_U_mul.
-+
-induction n.
-++
-unfold matrix_mul, L_mul, U_mul.
-simpl.
-destruct L as [l].
-destruct U as [v u].
-simpl.
-simpl.
-rewrite <- hd_eq_one_v with (x).
-simpl.
-rewrite <- hd_eq_one_v with (v).
-simpl.
-rewrite <- Rmult_assoc.
-reflexivity.
-++
-unfold matrix_mul, L_mul, LU_mul, U_mul.
-simpl.
-destruct L as [l].
-destruct U as [v u].
-simpl.
-pose (q := matrix_mul' n (a'' n (LU_mul' (tl v) (tl l) (tl u) (hd v) (hd u))) (tl x) (d'' n (LU_mul' (tl v) (tl l) (tl u) (hd v) (hd u))) (c'' n (LU_mul' (tl v) (tl l) (tl u) (hd v) (hd u))) (hd x) (hd v)).
-replace (matrix_mul' n (tl l) (matrix_mul' n (tl v) (tl x) (mkVector n 0) (tl u) (hd x) 0) (tl one_v0) (mkVector n 0) (hd v * hd x + hd u * hd (tl x)) (hd one_v0)) with q.
-+++
-replace (matrix_mul' n (a'' n (LU_mul' (tl v) (tl l) (tl u) (hd v) (hd u))) (tl x) (d'' n (LU_mul' (tl v) (tl l) (tl u) (hd v) (hd u))) (c'' n (LU_mul' (tl v) (tl l) (tl u) (hd v) (hd u))) (hd x) (hd v)) with q.
--
-rewrite Rmult_0_l.
-rewrite Rplus_0_r.
-(*доказано*)
-admit.
-- 
-reflexivity.
-+++
-replace (tl l) with ((a'' n (LU_mul' (tl v) (tl l) (tl u) (hd v) (hd u)))).
--
-  replace ((matrix_mul' n (tl v) (tl x) (mkVector n 0) (tl u) (hd x) 0)) with (tl x).
-    --
-      replace ((tl one_v0)) with ((d'' n (LU_mul' (tl v) (tl l) (tl u) (hd v) (hd u)))).
-        ---
-          replace ((mkVector n 0)) with ((c'' n (LU_mul' (tl v) (tl l) (tl u) (hd v) (hd u)))).
-            ----
-              replace ((hd v * hd x + hd u * hd (tl x))) with ( (hd x)).
-                -----
-                replace ((hd one_v0)) with ((hd v)).
-                  ------
-                  
-                  admit.
-                  ------
-                  
-                  admit.
-                -----
-                 admit.
-            ----
-              admit.  
-          
-        ---
-          admit.
-    --
-
-      admit.
--
-
-  admit.
-+
-apply H0.
-
-Admitted.
 
 
 
@@ -1054,6 +903,36 @@ Proof.
 intros.
 Admitted.
 
+(* Нужна общая лемма, в духе: (ai : R) (b : vector n), hd (rev (a1 :: a2 :: ... :: an :: b)) = hd (rev b) *)
+
+
+
+
+Lemma target_lemma : forall {n : nat}  (l x v : vector (S (S n))) ( u : vector (S n)),
+L_mul' (tl (tl l)) (tl (tl (U_mul {| v := v; u := u |} x)))
+(hd (tl (U_mul {| v := v; u := u |} x))) =
+tl
+(matrix_mul' n (a'' n (LU_mul' (tl v) (tl l) (tl u) (hd v) (hd u))) (tl x)
+(d'' n (LU_mul' (tl v) (tl l) (tl u) (hd v) (hd u)))
+(c'' n (LU_mul' (tl v) (tl l) (tl u) (hd v) (hd u))) (hd x) (hd v)).
+Proof.
+intros.
+induction n.
+  +
+    unfold L_mul', LU_mul, matrix_mul', U_mul.
+    simpl.
+    reflexivity.
+  +
+    unfold U_mul.
+    rewrite Revvvv.
+    
+        
+    
+
+
+Admitted.
+
+
 
 Lemma LUx_assoc'' : forall {n : nat} (L : L_matrix n) (U : U_matrix n) (x : vector (S n)),
       matrix_mul (LU_mul L U) (x) = L_mul (L) (U_mul (U) (x)).
@@ -1061,54 +940,65 @@ Proof.
 intros.
 induction n.
 + 
-unfold matrix_mul, L_mul, U_mul.
-simpl.
-destruct L as [l].
-destruct U as [v u].
-simpl.
-simpl.
-rewrite <- hd_eq_one_v with (x).
-rewrite rev_one.
-simpl.
-rewrite <- hd_eq_one_v with (v).
-rewrite rev_one.
-simpl.
-rewrite <- Rmult_assoc.
-rewrite hd_eq_one_v.
-rewrite <- hd_eq_one_v with (x).
-rewrite rev_one.
-reflexivity.
-+
-simpl.
-destruct L as [l].
-destruct U as [v u].
-simpl.
-rewrite vec_eq_hd_tl.
-replace (hd (L_mul {| l := l; one_v := one_v0 |} (U_mul {| v := v; u := u |} x))) with (hd l * hd v * hd x + hd l * hd u * hd (tl x)).
-++
-  replace (matrix_mul' n (a'' n (LU_mul' (tl v) (tl l) (tl u) (hd v) (hd u))) (tl x)
-    (d'' n (LU_mul' (tl v) (tl l) (tl u) (hd v) (hd u)))
-      (c'' n (LU_mul' (tl v) (tl l) (tl u) (hd v) (hd u))) (hd x) (hd v)) with (tl (L_mul {| l := l; one_v := one_v0 |} (U_mul {| v := v; u := u |} x))).
-  +++
+  unfold matrix_mul, L_mul, U_mul.
+  simpl.
+  destruct L as [l].
+  destruct U as [v u].
+  simpl.
+  simpl.
+  rewrite <- hd_eq_one_v with (x).
+  rewrite rev_one.
+  simpl.
+  rewrite <- hd_eq_one_v with (v).
+  rewrite rev_one.
+  simpl.
+  rewrite <- Rmult_assoc.
+  rewrite hd_eq_one_v.
+  rewrite <- hd_eq_one_v with (x).
+  rewrite rev_one.
   reflexivity.
-  +++
++
+  simpl.
+  destruct L as [l].
+  destruct U as [v u].
+  simpl.
+  rewrite vec_eq_hd_tl.
+  unfold matrix_mul, L_mul in IHn.
   unfold L_mul.
   simpl.
-  admit.
-++
-  unfold L_mul, U_mul.
+  unfold U_mul at 1.
   simpl.
-  induction n.
-  +++
-  unfold U_mul'.
-  rewrite Revvv with (hd (rev v) * hd (rev x)) (hd (tl (rev v)) * hd (tl (rev x)) + hd (rev u) * hd (rev x)).
   rewrite Revvvv.
   rewrite Revvvv.
-  (* ДОПИСАТЬ, НО ЭТО ПРАВДА *)
-  admit.
-  +++
-  rewrite Revv with ((hd (rev v) * hd (rev x))) (hd (tl (rev v)) * hd (tl (rev x)) + hd (rev u) * hd (rev x)) (U_mul' (tl (tl (rev x))) (tl (tl (rev v))) (tl (rev u)) (hd (tl (rev x)))).
-
-
+  set (q := hd l * hd v * hd x + hd l * hd u * hd (tl x)).
+  replace (hd l * hd (rev (hd (rev v) * hd (rev x) :: hd v * hd x + hd (rev u) * hd (rev x) :: U_mul' (tl (tl (rev x))) (tl (tl (rev v))) (tl (rev u)) (hd x)))) with q.
+    ++
+      replace ( matrix_mul' n (a'' n (LU_mul' (tl v) (tl l) (tl u) (hd v) (hd u))) (tl x)
+            (d'' n (LU_mul' (tl v) (tl l) (tl u) (hd v) (hd u)))
+            (c'' n (LU_mul' (tl v) (tl l) (tl u) (hd v) (hd u))) (hd x) (hd v)) with (hd (U_mul {| v := v; u := u |} x) + hd (tl l) * hd (tl (U_mul {| v := v; u := u |}
+            x))
+            :: L_mul' (tl (tl l)) (tl (tl (U_mul {| v := v; u := u |} x)))
+            (hd (tl (U_mul {| v := v; u := u |} x)))).
+        +++
+          reflexivity.
+        +++
+          rewrite vec_eq_hd_tl.
+          replace (hd (matrix_mul' n (a'' n (LU_mul' (tl v) (tl l) (tl u) (hd v) (hd u))) (tl x) (d'' n (LU_mul' (tl v) (tl l) (tl u) (hd v) (hd u))) (c'' n (LU_mul' (tl v) (tl l) (tl u) (hd v) (hd u))) (hd x) (hd v))) with (hd (U_mul {| v := v; u := u |} x) + hd (tl l) * hd (tl (U_mul {| v := v; u := u |} x))).
+            ++++
+              set (s := hd (U_mul {| v := v; u := u |} x) + hd (tl l) * hd (tl (U_mul {| v := v; u := u |} x))).
+              replace (tl (matrix_mul' n (a'' n (LU_mul' (tl v) (tl l) (tl u) (hd v) (hd u))) (tl x) (d'' n (LU_mul' (tl v) (tl l) (tl u) (hd v) (hd u))) (c'' n (LU_mul' (tl v) (tl l) (tl u) (hd v) (hd u))) (hd x) (hd v))) with (L_mul' (tl (tl l)) (tl (tl (U_mul {| v := v; u := u |} x))) (hd (tl (U_mul {| v := v; u := u |} x)))).
+                -
+                  reflexivity.
+                -
+                  rewrite target_lemma.
+                  reflexivity.
+            ++++
+              (* РУЧКАМИ *)
+              admit.
+    ++
+      (* РУЧКАМИ *)
+      admit.
 Admitted.
+
+
 
