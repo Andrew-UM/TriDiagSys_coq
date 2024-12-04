@@ -245,23 +245,30 @@ Definition LU_mul {n : nat} (L : L_matrix n) (U : U_matrix n) : A_matrix n :=
 
 (* Условия совместности *)
 
-Fixpoint check_nonzero {n : nat} (v : vector n) : bool :=
+(* Fixpoint check_nonzero {n : nat} (v : vector n) : bool :=
   match v with
   | [] => true
   | h :: t => if Req_EM_T h 0 then false else check_nonzero t 
-  end.
+  end. *)
 
+Fixpoint check_nonzero {n : nat} (v : vector n) : Prop :=
+  match v with
+  | nil _ => True
+  | h :: t => h <> 0 /\ check_nonzero t
+  end.
 
 Definition magicL {n : nat} (L : L_matrix n) : Prop :=
   let l := l _ L in
-  let l_not_zero := check_nonzero l in
-  (l_not_zero = true).
+  (* let l_not_zero := check_nonzero l in
+  (l_not_zero = true). *)
+  check_nonzero l.
 
 
 Definition magicU {n : nat} (U : U_matrix n) : Prop :=
   let u := u _ U in
-  let u_not_zero := check_nonzero u in
-  (u_not_zero = true).
+  (* let u_not_zero := check_nonzero u in
+  (u_not_zero = true). *)
+  check_nonzero u.
 
 
 Definition is_consistent {n : nat} (SLE : TriDiagSys n) : Prop :=
@@ -274,6 +281,11 @@ Definition is_consistent {n : nat} (SLE : TriDiagSys n) : Prop :=
 
 
 (* Вспомогательные леммы*)
+
+Lemma vec_nonzero_hd_nz : forall {n : nat} (a : vector (S n)), check_nonzero a -> hd a <> 0.
+Proof.
+
+Admitted.
 
 Lemma vec_eq_hd_tl : forall {n : nat} (b : vector (S n)), b = hd b :: tl b.
 Proof.
@@ -394,12 +406,12 @@ induction n.
                 rewrite <- Rmult_assoc.
                 rewrite Rinv_r.
                   -
-                  rewrite Rmult_1_l.
-                  reflexivity.
+                    rewrite Rmult_1_l.
+                    reflexivity.
                   -
-                  unfold q.
+                    unfold q.
                   (*проверить отсутвие деления на 0*)
-                admit.
+                    admit.
               ++++
               (*проверить отсутвие деления на 0*)
                 admit.
@@ -557,7 +569,7 @@ Definition L_mul {n : nat} (L : L_matrix n) (y : vector (S n)) : vector (S n) :=
 
 
 (* TODO добавить условие совместности *)
-Lemma L_mul'_cor : forall {n : nat} (l' b : vector n) (y0 : R), check_nonzero l' =  true ->
+Lemma L_mul'_cor : forall {n : nat} (l' b : vector n) (y0 : R), check_nonzero l' ->
 L_mul' l' (find_y' b l' y0) y0 = b.
 Proof.
 intros n l' b.
@@ -588,9 +600,10 @@ induction n.
         rewrite <- vec_eq_hd_tl.
         reflexivity.
       ++
-        unfold check_nonzero.
+        unfold check_nonzero in H.
+        apply vec_nonzero_hd_nz.
         (*Проверить отсутвие деления на 0, раскрыть check_nonzero*)
-        (*apply H.*)
+        (* apply H. *)
 Admitted.
 
 
@@ -747,6 +760,8 @@ rewrite Rinv_r_simpl_m.
     rewrite rev_rev.
     reflexivity.
   +
+    unfold magicU in H.
+    simpl in H.
     (*TODO подкрутить отсутвие деления на 0*)
 Admitted.
 
@@ -917,16 +932,40 @@ tl
 (c'' n (LU_mul' (tl v) (tl l) (tl u) (hd v) (hd u))) (hd x) (hd v)).
 Proof.
 intros.
-induction n.
+destruct n as [| k].
   +
-    unfold L_mul', LU_mul, matrix_mul', U_mul.
     simpl.
     reflexivity.
   +
-    unfold U_mul.
-    rewrite Revvvv.
-    
-        
+    (*  Выглядит разумно попробовать переписать это как ручками:
+        обозначить штуки с U_mul как u[i], аналогично в IHn,
+        и пытаться работать с этим как с человеческим выражением.
+
+        Для переписывания в IHn доказать что-нибудь в духе:
+        При удленении вектора любым элементом - ничего не меняется для конкретных tl (tl (...))
+
+     *)
+
+      generalize dependent x. (* Обобщаем x для индуктивного шага *)
+      induction k as [| k' IHk].
+        ++
+          intros x.
+          simpl.
+          unfold U_mul.
+          simpl.
+          admit.
+        ++
+          intros x.
+          rewrite vec_eq_hd_tl with (x).
+          set (x1 := hd x).
+          set (tlx := tl x).
+          simpl.
+          specialize (IHk tlx).
+
+
+          admit.
+
+      
     
 
 
@@ -993,10 +1032,16 @@ induction n.
                   rewrite target_lemma.
                   reflexivity.
             ++++
+              rewrite vec_eq_hd_tl with (x).
+              set (x1 := hd x).
+              set (tlx := tl x).
+              simpl.
+
               (* РУЧКАМИ *)
               admit.
     ++
-      (* РУЧКАМИ *)
+
+      (* ТОЧНО РУЧКАМИ *)
       admit.
 Admitted.
 
