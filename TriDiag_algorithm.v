@@ -66,10 +66,6 @@ match n with
 end.
 
 
-
-
-
-
 Fixpoint matrix_mul' (n : nat) (a b x : vector R (S n)) (c : vector R n) (x_i : R) : vector R (S n) :=
   match n return vector R (S n) -> vector R (S n) -> vector R (S n) -> vector R n -> vector R (S n) with
   | 0 => fun a b x c =>
@@ -139,11 +135,8 @@ Definition find_alpha {n : nat} (SLE : TriDiagSys n) : vector R (S n) :=
     let c_1 := hd (c _ SLE) in
     let b_1 := hd (b _ SLE) in
     let alpha_1 := alpha_1 c_1 b_1 in
-    alpha_1 :: (find_alpha' (S k) (b _ SLE) (c _ SLE) (a _ SLE) alpha_1) (* TODO разобраться с длинами и правда ли, что скомпилировалось => с длинами все норм *)
+    alpha_1 :: (find_alpha' (S k) (b _ SLE) (c _ SLE) (a _ SLE) alpha_1)
   end SLE.
-
-
-
 
 
 Fixpoint find_beta' (n : nat) (b f alpha: vector R (S n)) (a : vector R n) (beta : R) : vector R n :=
@@ -172,10 +165,6 @@ Definition find_beta {n : nat} (SLE : TriDiagSys n) (alpha : vector R (S n)) : v
     let beta_1 := beta_1 f_1 b_1 in
     beta_1 :: (find_beta' (S k) (b _ SLE) (f _ SLE) alpha (a _ SLE) beta_1)
   end SLE alpha.
-
-
-
-
 
 
 Fixpoint find_x' (n : nat) (alpha beta : vector R (S n)) (x : R) : vector R (n) :=
@@ -210,10 +199,6 @@ match n return TriDiagSys n -> vector R (S n) -> vector R (S n) -> vector R (S n
   end SLE alpha beta.
 
 
-
-
-
-
 Definition solution {n : nat} (SLE : TriDiagSys n) : vector R (S n) :=
   match n return TriDiagSys n -> vector R (S n) with
   | 0 => fun SLE => 
@@ -226,8 +211,6 @@ Definition solution {n : nat} (SLE : TriDiagSys n) : vector R (S n) :=
     let beta := find_beta SLE alpha in
     find_x SLE alpha beta
   end SLE.
-
-
 
 
 Fixpoint find_denominator' (n : nat) (b : vector R (S n)) (a c : vector R n) (alpha : R) : vector R n :=
@@ -258,19 +241,5 @@ Definition find_denominator {n : nat} (SLE : TriDiagSys n) : vector R (S n) :=
     let alpha_1 := alpha_1 c_1 b_1 in
     denominator :: (find_denominator' (S k) (b _ SLE) (c _ SLE) (a _ SLE) alpha_1) 
     end SLE.
-
-
-
-Fixpoint check_nonzero {n : nat} (v : vector R n) : bool :=
-  match v with
-  | [] => true (* Опять относительно несущественный лишний случай *)
-  | h :: t => if Req_EM_T h 0%R then false else check_nonzero t 
-  end.
-
-
-
-Definition is_consistent {n : nat} (SLE : TriDiagSys n) : Prop :=
-  check_nonzero (find_denominator SLE) = true. 
-
 
 
