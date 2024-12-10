@@ -250,8 +250,9 @@ Definition LU_mul {n : nat} (L : L_matrix n) (U : U_matrix n) : A_matrix n :=
 
 
 (* Условия совместности *)
-
+(*Defenition*)
 Fixpoint check_nonzero {n : nat} (v : vector n) : Prop :=
+(* Forall (fun h => h<>0) v. *)
   match v with
   | nil _ => True
   | h :: t => h <> 0 /\ check_nonzero t
@@ -274,6 +275,7 @@ Definition is_consistent {n : nat} (SLE : TriDiagSys n) : Prop :=
 
 
 (* Вспомогательные леммы*)
+
 (*Require Import Coq.Program.Equality.
 Program Definition vec_to_hd_tl {n : nat} (b : vector (S n)) :=
 match b return (exists r, b = r) with
@@ -302,30 +304,59 @@ refine (match b with | nil _ => _ | cons _ _ _ _ => _ end).
   +
     reflexivity.
   +
-      unfold IDProp.
-      intros.
-      apply H.
+    unfold IDProp.
+    intros.
+    apply H.
 Qed.
 
 
 Lemma rev_one : forall (x : R),
   rev [x] = [x].
 Proof.
-intros x.
-Admitted.
+intros x. 
+rewrite rev_cons. 
+rewrite rev_nil.
+simpl. 
+reflexivity.
+Qed.
 
 
 Lemma vec_nz_rev_nz : forall {n : nat} (a : vector n), check_nonzero a -> check_nonzero (rev a).
 Proof.
-intros n.
-(* apply Forall_rev. *)
+intros n a.
+refine (match a with | nil _ => _ | cons _ _ _ _ => _ end). 
+  +
+    rewrite rev_nil.
+    unfold check_nonzero.
+    reflexivity.
+  +
+    induction t.
+      ++
+        intros.
+        rewrite rev_one.
+        apply H.
+      ++
+        (* rewrite rev_cons. *)
+        intros.
 Admitted.
 
 
 Lemma vec_nz_v_find_nz : forall {n : nat} (d : vector (S n)), check_nonzero (v_find (tl d)) -> check_nonzero (tl d).
 Proof.
-intros.
-unfold v_find in H.
+intros n d0.
+refine (match d0 with | nil _ => _ | cons _ _ _ _ => _ end). 
+  +
+    unfold IDProp.
+    intros.
+    apply H.
+  +
+    simpl.
+    induction t.
+      ++
+        unfold v_find.
+        simpl.
+        reflexivity.
+      ++
 Admitted.
 
 
