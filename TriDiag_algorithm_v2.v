@@ -274,25 +274,65 @@ Definition is_consistent {n : nat} (SLE : TriDiagSys n) : Prop :=
 
 
 (* Вспомогательные леммы*)
+(*Require Import Coq.Program.Equality.
+Program Definition vec_to_hd_tl {n : nat} (b : vector (S n)) :=
+match b return (exists r, b = r) with
+| nil _ => _
+| cons _ h _ t => _ = exist (b = h :: t)
+end. *)
 
-Lemma vec_eq_hd_tl : forall {n : nat} (b : vector (S n)), b = hd b :: tl b.
+Print t_rect.
+Program Lemma vec_eq_hd_tl : forall {n : nat} (b : vector (S n)), b = hd b :: tl b.
 Proof.
-  intros n b. (* Вводим переменные n и b *)
+  intros n b.
+  refine (match b with | nil _ => _ | cons _ _ _ _ => _ end).  
+    +
+      unfold IDProp.
+      intros.
+      apply H.
+    +
+      simpl.
+      reflexivity.
+Qed.
+
+
+Lemma v0_eq_nil : forall (b : vector 0), b = [].
+Proof.
+intros b.
+refine (match b with | nil _ => _ | cons _ _ _ _ => _ end).
+  +
+    reflexivity.
+  +
+      unfold IDProp.
+      intros.
+      apply H.
+Qed.
+
+
+Lemma rev_one : forall (x : R),
+  rev [x] = [x].
+Proof.
+  intros x.
+
   
 Admitted.
 
 
-Lemma v0_eq_nil : forall (v : vector 0), v = [].
+
+Lemma vec_nz_tl_rev_nz : forall {n : nat} (a : vector (S n)), check_nonzero a -> check_nonzero ((tl (rev a))).
 Proof.
-intros.
-unfold vector in v0.
+intros n a H.
+induction n.
+  +
+    admit.
+  +
+
 Admitted.
 
-
-Lemma rev_one : forall (A : Type) (x : A),
-  rev [x] = [x].
+Lemma vec_nz_v_find_nz : forall {n : nat} (d : vector (S n)), check_nonzero (v_find (tl d)) -> check_nonzero (tl d).
 Proof.
-  intros A x.
+intros.
+unfold v_find in H.
 Admitted.
 
 
@@ -303,17 +343,6 @@ Proof.
   inversion Hnz.
   apply H.
 Qed.
-
-
-Lemma vec_nz_tl_rev_nz : forall {n : nat} (a : vector (S n)), check_nonzero a -> check_nonzero ((tl (rev a))).
-Proof.
-intros n a H.
-Admitted.
-
-Lemma vec_nz_v_find_nz : forall {n : nat} (d : vector (S n)), check_nonzero (v_find (tl d)) -> check_nonzero (tl d).
-Proof.
-intros.
-Admitted.
 
 
 Lemma vec_nz_tl_nz : forall {n : nat} (a : vector (S n)), check_nonzero a -> check_nonzero ((tl a)).
@@ -328,8 +357,22 @@ Qed.
 Lemma vec_nz_rev_nz : forall {n : nat} (a : vector n), check_nonzero a -> check_nonzero (rev a).
 Proof.
 intros.
-Admitted.
+induction n.
+  +
+    rewrite v0_eq_nil.
+    rewrite v0_eq_nil in H.
+    apply H.
+  +
+    rewrite vec_eq_hd_tl.
+    simpl.
+    split.
+      ++
+        admit.
+      ++
 
+          
+    
+Admitted.
 
 Lemma div_nz: forall (a b : R), (a / b) <> 0 -> a <> 0 /\ b <> 0.
 Proof.
@@ -1071,16 +1114,16 @@ Proof.
 intros.
 rewrite <- LU_Decomposition.  
   +
-     rewrite LUx_assoc.
-     rewrite U_solution.
+    rewrite LUx_assoc.
+    rewrite U_solution.
       ++
-       rewrite L_solution.
-        +++
-         reflexivity.
-        +++
-          apply H.
+        rewrite L_solution.
+          +++
+            reflexivity.
+          +++
+            apply H.
       ++
-        apply H.
+      apply H.
   +
     apply H.
 Qed.
