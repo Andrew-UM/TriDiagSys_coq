@@ -281,8 +281,7 @@ match b return (exists r, b = r) with
 | cons _ h _ t => _ = exist (b = h :: t)
 end. *)
 
-Print t_rect.
-Program Lemma vec_eq_hd_tl : forall {n : nat} (b : vector (S n)), b = hd b :: tl b.
+Lemma vec_eq_hd_tl : forall {n : nat} (b : vector (S n)), b = hd b :: tl b.
 Proof.
   intros n b.
   refine (match b with | nil _ => _ | cons _ _ _ _ => _ end).  
@@ -312,22 +311,16 @@ Qed.
 Lemma rev_one : forall (x : R),
   rev [x] = [x].
 Proof.
-  intros x.
-
-  
+intros x.
 Admitted.
 
 
-
-Lemma vec_nz_tl_rev_nz : forall {n : nat} (a : vector (S n)), check_nonzero a -> check_nonzero ((tl (rev a))).
+Lemma vec_nz_rev_nz : forall {n : nat} (a : vector n), check_nonzero a -> check_nonzero (rev a).
 Proof.
-intros n a H.
-induction n.
-  +
-    admit.
-  +
-
+intros n.
+(* apply Forall_rev. *)
 Admitted.
+
 
 Lemma vec_nz_v_find_nz : forall {n : nat} (d : vector (S n)), check_nonzero (v_find (tl d)) -> check_nonzero (tl d).
 Proof.
@@ -354,25 +347,14 @@ apply H.
 Qed.
 
 
-Lemma vec_nz_rev_nz : forall {n : nat} (a : vector n), check_nonzero a -> check_nonzero (rev a).
+Lemma vec_nz_tl_rev_nz : forall {n : nat} (a : vector (S n)), check_nonzero a -> check_nonzero ((tl (rev a))).
 Proof.
-intros.
-induction n.
-  +
-    rewrite v0_eq_nil.
-    rewrite v0_eq_nil in H.
-    apply H.
-  +
-    rewrite vec_eq_hd_tl.
-    simpl.
-    split.
-      ++
-        admit.
-      ++
+intros n a H.
+apply vec_nz_tl_nz.
+apply vec_nz_rev_nz.
+apply H.
+Qed.
 
-          
-    
-Admitted.
 
 Lemma div_nz: forall (a b : R), (a / b) <> 0 -> a <> 0 /\ b <> 0.
 Proof.
